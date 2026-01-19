@@ -364,7 +364,7 @@ h6 {
 }
 
 .card-flat {
-    box-shadow: none;
+    box-shadow: none !important;
 }
 
 .bg-pink {

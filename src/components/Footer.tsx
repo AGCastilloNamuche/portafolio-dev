@@ -1,6 +1,7 @@
 import { Link } from "react-router"
 import { IconBrandFacebook, IconBrandFigma, IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
 import type { NavItem } from "../navigation";
+import logo from "../assets/images/logo.svg?raw";
 type Props = {
     navItems: readonly NavItem[]
 }
@@ -12,11 +13,12 @@ const Footer = ({ navItems }: Props) => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mb-7 gap-15">
                         <div className="container-start-logo">
                             <div className="container-logo">
-                                <h2 style={{ lineHeight: 'normal' }}>
+                                <div dangerouslySetInnerHTML={{ __html: logo }}></div>
+                                {/* <h2 style={{ lineHeight: 'normal' }}>
                                     <span>A</span>
                                     <span>C</span>
                                     <span>N</span>
-                                </h2>
+                                </h2> */}
                                 <p className="mt-3">Diseño y desarrollo productos digitales para web y móvil, combinando creatividad, rendimiento y experiencia de usuario.</p>
                             </div>
                         </div>

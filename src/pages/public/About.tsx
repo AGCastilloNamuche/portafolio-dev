@@ -7,7 +7,7 @@ import TextField from "../../components/TextField"
 import getBrowser from "../../lib/db/browser"
 
 const About = () => {
-    const [contacts, setContacts] = useState<Contact[]>(contactsDB);
+    const [contacts, setContacts] = useState<Contact[]>(contactsDB as unknown as Contact[]);
     const [selectedContact, setSelectedContact] = useState<Contact | null>(null)
 
     useEffect(() => {

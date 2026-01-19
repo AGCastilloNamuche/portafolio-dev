@@ -1,6 +1,7 @@
 import { NavLink } from "react-router";
 import type { NavItem } from "../navigation";
 import { IconCode } from "@tabler/icons-react";
+import logo from "../assets/images/logo.svg?raw"
 
 type Props = {
     navItems: readonly NavItem[]
@@ -13,12 +14,13 @@ const HorizontalNavLayout = ({ navItems }: Props) => {
             <div className="layout-navbar">
                 <header className="navbar-content-container">
                     <div className="navbar-container">
-                        <div className="container-logo">
-                            <h2>
+                        <div className="container-logo flex items-center">
+                            <div dangerouslySetInnerHTML={{ __html: logo }}></div>
+                            {/* <h2>
                                 <span>A</span>
                                 <span>C</span>
                                 <span>N</span>
-                            </h2>
+                            </h2> */}
                         </div>
                         <nav className="navbar-content">
                             <ul className="nav-items">

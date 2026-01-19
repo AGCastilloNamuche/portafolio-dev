@@ -54,7 +54,7 @@ const Home = () => {
             <div className="container-inf mb-10">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-24">
                     <div className="lg:col-span-1 space-y-6">
-                        <Link to="#">
+                        <Link to="/skill">
                             <div className="card border-radius-flat p-0 card-flat bg-mint card-link">
                                 <div className="card-flouris">
                                     <div className="card-icon-svg">

@@ -17,9 +17,9 @@ const navItems = [
         href: "/about"
     },
     {
-        name: "Servicios",
+        name: "Proyectos",
         type: "link",
-        href: "/services"
+        href: "/project"
     },
     {
         name: "Contacto",

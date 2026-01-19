@@ -5,38 +5,43 @@ import Home from "./pages/public/Home";
 import Login from "./pages/public/Login";
 import NotFound from "./pages/NotFound";
 import Forbidden from "./pages/Forbidden";
-import About from "./pages/public/about";
-import Services from "./pages/public/Services";
+import About from "./pages/public/About";
+import Project from "./pages/public/Project";
+import Skill from "./pages/public/skill";
 
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <RootLayout/>,
+        element: <RootLayout />,
         children: [
             {
                 index: true,
-                element: <Home/>
+                element: <Home />
             },
             {
                 path: "login",
-                element: <Login/>
+                element: <Login />
             },
             {
                 path: "about",
-                element: <About/>
+                element: <About />
             },
             {
-                path: "services",
-                element: <Services/>
+                path: "project",
+                element: <Project />
+            },
+            {
+                path: "skill",
+                element: <Skill />
             },
             {
                 path: "not-found",
-                element: <NotFound/>
+                element: <NotFound />
             },
             {
                 path: "forbidden",
-                element: <Forbidden/>
+                element: <Forbidden />
             }
         ]
     }
