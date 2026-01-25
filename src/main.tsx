@@ -6,6 +6,9 @@ import './index.css'
 import './assets/style/ui.css'
 import { RouterProvider } from "react-router";
 import { router } from "./router";
+import dayjs from 'dayjs'
+import 'dayjs/locale/es'
+dayjs.locale('es')
 
 //configuracion de scroll
 window.addEventListener("scroll", () => {

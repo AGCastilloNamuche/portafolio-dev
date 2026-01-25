@@ -30,16 +30,17 @@ import { EditWell } from "../../components";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Grid } from 'swiper/modules';
 
-const Home = () => {
+const Home = () => { 
     return (
         <div className="content">
             <div className="d-block m-auto text-center w-100 container-title mb-15">
                 <h1 className="position-relative">
-                    <span className="star-icon left">
+                    <span className="absolute bottom-2 left-0">
                         <IconBulb size={90} color="#4c6763" />
                     </span>
-                    Hola. Soy Gian Pierre
-                    <span className="star-icon right">
+                    <span className="flex justify-center relative font-acorn">Hola. Soy</span>
+                    <span className="flex justify-center relative font-acorn">Gian Pierre</span>
+                    <span className="absolute top-0 right-0">
                         <IconPalette size={90} color="#4c6763" />
                     </span>
                 </h1>
@@ -255,7 +256,7 @@ const Home = () => {
                             <img src={armadillo} alt="armadillo" />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={clinica} alt="clinica veterinaria champagnat" />
+                            <img src={clinica} alt="Clinica veterinaria champagnat" />
                         </SwiperSlide>
                     </Swiper>
                 </div>
