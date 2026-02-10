@@ -5,6 +5,10 @@ import { contacts as contactsDB, type Contact } from "../../lib/db/client"
 import { useEffect, useState } from "react"
 import TextField from "../../components/TextField"
 import getBrowser from "../../lib/db/browser"
+import { skills } from "../../lib/db/skills"
+import { filters } from "../../lib/util/config"
+
+const skillsDeveloper = (values: number[]) => filters({array:skills, key:"id", value:values})
 
 const About = () => {
     const [contacts, setContacts] = useState<Contact[]>(contactsDB as unknown as Contact[]);
@@ -30,13 +34,13 @@ const About = () => {
                 <h1>Gian Pierre</h1>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 place-items-center mb-15">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 place-items-center mb-15">
                 <div className="avatar-profile">
                     <img src={profile} alt="" />
                 </div>
                 <div className="col-span-2">
                     <div className="container-text-profile">
-                        <h2 className="text-h2 font-bold mb-2">Soy diseñador en UX/UI</h2>
+                        <h2 className="text-h2 font-bold mb-2">Soy desarrollador Full Stack Web & Móvil</h2>
                         <p className="mb-5 text-justify text-lg">
                             Durante los últimos 5 años me he desempeñado como desarrollador de software, especializándome en la creación de interfaces
                             y experiencias digitales centradas en el usuario. A lo largo de este tiempo, he trabajado en el diseño y construcción
@@ -56,7 +60,7 @@ const About = () => {
             <div className="grid grid-cols-1 place-items-center md:grid-cols-2 lg:grid-cols-4 gap-8 mb-15">
                 <div className="flex flex-col gap-1">
                     <CountUp className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500" value={100} suffix="+" />
-                    <p>Proyecto completado</p>
+                    <p>Proyectos completados</p>
                 </div>
                 <div className="flex flex-col gap-1">
                     <CountUp className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500" value={5} suffix="+" />
@@ -64,11 +68,97 @@ const About = () => {
                 </div>
                 <div className="flex flex-col gap-1">
                     <CountUp className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500" value={12} suffix="+" />
-                    <p>Cliente satisfecho</p>
+                    <p>Clientes satisfechos</p>
                 </div>
                 <div className="flex flex-col gap-1">
                     <CountUp className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500" value={99} suffix="%" />
                     <p>Entregas a tiempo</p>
+                </div>
+            </div>
+
+            {/* stack */}
+            <div className="flex flex-col gap-5 mb-15">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+                    <div className="flex flex-col">
+                        <span className="text-sm text-green-950 font-bold uppercase">Mi desarrollo personal</span>
+                        <h2 className="text-h2 font-bold text-green-950 leading-12 mb-2">Stack principal con el que construyo productos web y móviles.</h2>
+                    </div>
+                    <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-2">
+                        <div>
+                            <h4>Frontend</h4>
+                            <p className="text-sm">▰▰▰▰▰ Vue · Tailwind · Vite · TS/JS</p>
+                        </div>
+                        <div>
+                            <h4>Backend</h4>
+                            <p className="text-sm">▰▰▰▰▰ Python · Django</p>
+                        </div>
+
+                        <div>
+                            <h4>Móvil</h4>
+                            <p className="text-sm">▰▰▰▰▰ Flutter · Dart</p>
+                        </div>
+
+                        <div>
+                            <h4>Base de datos</h4>
+                            <p className="text-sm">▰▰▰▰▰ PostgreSQL</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:!grid-cols-3">
+                    <div className="card !bg-transparent">
+                        <div className="flex flex-col gap-4">
+                            <div className="flex flex-col">
+                                <h2 className="text-lg">Stack Core (uso diario)</h2>
+                                <p className="text-[12px]">Mi base para construir productos web end-to-end.</p>
+                            </div>
+                            <div className="flex flex-wrap gap-2">
+                                {
+                                    skillsDeveloper([22, 2, 23, 5 , 28, 43, 44]).map((item) => (
+                                        <div className="flex gap-1 items-center justify-center rounded-3xl bg-[#025a4e1c] !px-3 !py-1">
+                                            <item.icon stroke={2} color="#025a4e" size={18} />
+                                            <span className='text-xs font-bold text-[#025a4e]'>{item.name}</span>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card !bg-transparent">
+                        <div className="flex flex-col gap-4">
+                            <div className="flex flex-col">
+                                <h2 className="text-lg">Mobile & Experiencia adicional</h2>
+                                <p className="text-[12px]">También trabajo con</p>
+                            </div>
+                            <div className="flex flex-wrap gap-2">
+                                {
+                                    skillsDeveloper([7 , 8, 3, 4,35, 34,37]).map((item) => (
+                                        <div className="flex gap-1 items-center justify-center rounded-3xl bg-[#025a4e1c] !px-3 !py-1">
+                                            <item.icon stroke={2} color="#025a4e" size={18} />
+                                            <span className='text-xs font-bold text-[#025a4e]'>{item.name}</span>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card !bg-transparent">
+                        <div className="flex flex-col gap-4">
+                            <div className="flex flex-col">
+                                <h2 className="text-lg">Datos & Cloud (NoSQL)</h2>
+                                <p className="text-[12px]">Datos y servicios</p>
+                            </div>
+                            <div className="flex flex-wrap gap-2">
+                                {
+                                    skillsDeveloper([36 , 38, 45, 46, 47]).map((item) => (
+                                        <div className="flex gap-1 items-center justify-center rounded-3xl bg-[#025a4e1c] !px-3 !py-1">
+                                            <item.icon stroke={2} color="#025a4e" size={18} />
+                                            <span className='text-xs font-bold text-[#025a4e]'>{item.name}</span>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

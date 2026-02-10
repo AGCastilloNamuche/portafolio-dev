@@ -24,11 +24,11 @@ export const experience:ReadonlyArray<Experience> = [
         start_date: dayjs("2024-11-01").toDate(),
         is_active: true,
         end_date: dayjs().toDate(),
-        company: findValue({ array: companies, key: "id", value: 1, returnkey: "name" }),
+        company: findValue({ array: companies, key: "id", value: 1,  returnkey: "name" , isReturn: true}),
         skills: filters({ 
             array: skills, 
             key: "id", 
-            value: [1, 2, 3, 4, 5 , 6, 7, 22, 24, 25, 26 , 27 , 29 , 30] 
+            value: [1, 2, 3, 4, 5 , 6, 7, 22, 24, 25, 26 , 27 , 29 , 30, 44] 
         }),
         typeExperience: workExperience,
     },
@@ -39,7 +39,7 @@ export const experience:ReadonlyArray<Experience> = [
         start_date: dayjs("2025-01-10").toDate(),
         is_active: false,
         end_date: dayjs("2025-08-28").toDate(),
-        company: findValue({ array: companies, key: "id", value: 5, returnkey: "name" }),
+        company: findValue({ array: companies, key: "id", value: 5, returnkey: "name" , isReturn: true}),
         skills: filters({ 
             array: skills, 
             key: "id", 
@@ -54,7 +54,7 @@ export const experience:ReadonlyArray<Experience> = [
         start_date: dayjs("2024-02-24").toDate(),
         is_active: false,
         end_date: dayjs("2024-12-22").toDate(),
-        company: findValue({ array: companies, key: "id", value: 4, returnkey: "name" }),
+        company: findValue({ array: companies, key: "id", value: 4, returnkey: "name" , isReturn: true}),
         skills: filters({ 
             array: skills, 
             key: "id", 
@@ -69,7 +69,7 @@ export const experience:ReadonlyArray<Experience> = [
         start_date: dayjs("2022-11-29").toDate(),
         is_active: false,
         end_date: dayjs("2023-10-27").toDate(),
-        company: findValue({ array: companies, key: "id", value: 1, returnkey: "name" }),
+        company: findValue({ array: companies, key: "id", value: 1, returnkey: "name" , isReturn: true}),
         skills: filters({ 
             array: skills, 
             key: "id", 
@@ -84,7 +84,7 @@ export const experience:ReadonlyArray<Experience> = [
         start_date: dayjs("2022-03-14").toDate(),
         is_active: false,
         end_date: dayjs("2022-10-27").toDate(),
-        company: findValue({ array: companies, key: "id", value: 6, returnkey: "name" }),
+        company: findValue({ array: companies, key: "id", value: 6, returnkey: "name" , isReturn: true}),
         skills: filters({ 
             array: skills, 
             key: "id", 
@@ -99,7 +99,7 @@ export const experience:ReadonlyArray<Experience> = [
         start_date: dayjs("2019-01-07").toDate(),
         is_active: false,
         end_date: dayjs("2022-01-31").toDate(),
-        company: findValue({ array: companies, key: "id", value: 3, returnkey: "name" }),
+        company: findValue({ array: companies, key: "id", value: 3, returnkey: "name" , isReturn: true}),
         skills: filters({ 
             array: skills, 
             key: "id", 

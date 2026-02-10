@@ -1,4 +1,4 @@
-import { IconApi, IconBrandAdobeIllustrator, IconBrandAdobeIndesign, IconBrandAdobePhotoshop, IconBrandAdobeXd, IconBrandCss3, IconBrandDeviantart, IconBrandDjango, IconBrandFigma, IconBrandFlutter, IconBrandFramer, IconBrandGit, IconBrandGithub, IconBrandGitlab, IconBrandHtml5, IconBrandJavascript, IconBrandLaravel, IconBrandMysql, IconBrandNodejs, IconBrandPhp, IconBrandPython, IconBrandQq, IconBrandReact, IconBrandSafari, IconBrandTailwind, IconBrandTrello, IconBrandTypescript, IconBrandVue, IconCircleDashedLetterG, IconCircleDashedLetterP, IconCircleDashedLetterQ, IconCircleDashedLetterR, IconCircleDottedLetterA, IconCircleDottedLetterC, IconCircleDottedLetterD, IconCircleDottedLetterG, IconCircleDottedLetterR, IconCloudComputing, IconCurrencyIranianRial, IconFlame, IconGalaxy, IconPackageExport, IconSql, IconWorldPin } from '@tabler/icons-react'
+import { IconApi, IconBrandAdobeIllustrator, IconBrandAdobeIndesign, IconBrandAdobePhotoshop, IconBrandAdobeXd, IconBrandCss3, IconBrandDeviantart, IconBrandDjango, IconBrandDocker, IconBrandFigma, IconBrandFirebase, IconBrandFlutter, IconBrandFramer, IconBrandGit, IconBrandGithub, IconBrandGitlab, IconBrandHtml5, IconBrandJavascript, IconBrandLaravel, IconBrandMongodb, IconBrandMysql, IconBrandNodejs, IconBrandPhp, IconBrandPython, IconBrandQq, IconBrandReact, IconBrandSafari, IconBrandTailwind, IconBrandTrello, IconBrandTypescript, IconBrandVite, IconBrandVue, IconCircleDashedLetterG, IconCircleDashedLetterP, IconCircleDashedLetterQ, IconCircleDashedLetterR, IconCircleDottedLetterA, IconCircleDottedLetterC, IconCircleDottedLetterD, IconCircleDottedLetterG, IconCircleDottedLetterR, IconCloudComputing, IconCurrencyIranianRial, IconFlame, IconGalaxy, IconPackageExport, IconSql, IconWorldPin } from '@tabler/icons-react'
 
 export type Skill = {
     id: number;
@@ -253,6 +253,39 @@ export const skills: ReadonlyArray<Skill> = [
         name: "JWT",
         img: "",
         icon: IconGalaxy
+    },
+    {
+        id: 43,
+        name: "Vite",
+        img: "",
+        icon: IconBrandVite
+    },
+
+    {
+        id: 44,
+        name: "Docker",
+        img: "",
+        icon: IconBrandDocker
+    },
+
+    {
+        id: 45,
+        name: "SQLite",
+        img: "",
+        icon: IconSql
+    },
+
+    {
+        id: 46,
+        name: "Firebase",
+        img: "",
+        icon: IconBrandFirebase
+    },
+    {
+        id: 47,
+        name: "MongoDB",
+        img: "",
+        icon: IconBrandMongodb
     },
 ]
 

@@ -1,6 +1,5 @@
 import { Link } from "react-router"
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import starIcon from "../../assets/images/star-2.svg"
 import iconPc from "../../assets/images/computer-pc.svg??raw";
 import iconUserExperience from "../../assets/images/user-experience.svg??raw";
 import iconReact from "../../assets/images/react.svg??raw";
@@ -14,14 +13,7 @@ import iconDocs from "../../assets/images/card_docs_icon_02.svg??raw";
 import iconDocs2 from "../../assets/images/card_docs_icon_03.svg??raw";
 import iconBlog from "../../assets/images/card_figma_icon_01.svg??raw";
 import iconBlog2 from "../../assets/images/card_figma_icon_02.svg??raw";
-import agv from "../../assets/images/AGV.svg??raw";
-import fruitist from "../../assets/images/fruitist.svg??raw";
 import dash from "../../assets/images/dash.svg??raw"
-import house from "../../assets/images/logo-house.png"
-import microcash from "../../assets/images/microcash.png"
-import armadillo from "../../assets/images/armadillo.png"
-import clinica from "../../assets/images/clinica-cha.jpg"
-
 import website from "../../assets/animation/modules.lottie";
 import devAgx from "../../assets/animation/dev_agx.lottie";
 import blog from "../../assets/animation/website-development.lottie";
@@ -29,6 +21,7 @@ import { IconBulb, IconPalette } from '@tabler/icons-react';
 import { EditWell } from "../../components";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Grid } from 'swiper/modules';
+import { companies } from "../../lib/db/company";
 
 const Home = () => { 
     return (
@@ -46,8 +39,7 @@ const Home = () => {
                 </h1>
                 <div className="wrapper">
                     <p className="text-center grid-column-2 subtitle">
-                        Ingeniero de sistemas, desarrollador front-end y backend,
-                        Me apasiona crear experiencias que sean atractivas, accesibles y centradas en el usuario.
+                        Ingeniero de sistemas y desarrollador full stack (web y móvil). Me apasiona crear experiencias atractivas, accesibles y centradas en el usuario.
                     </p>
                 </div>
             </div>
@@ -77,7 +69,7 @@ const Home = () => {
 
                     <div className="lg:col-span-2 space-y-6 h-100">
                         <div className="card border-radius-flat p-0 card-flat bg-pink card-link h-100">
-                            <Link to="#">
+                            <Link to="/projects">
                                 <div className="card-flouris">
                                     <div className="card-icon-svg">
                                         <div className="d-flex align-center justify-space-between gap-4">
@@ -238,26 +230,23 @@ const Home = () => {
                         }}
                         className="mySwiper"
                     >
-                        <SwiperSlide>
-                            <div className="flex items-center gap-5">
-                                <div className="icon-slide" dangerouslySetInnerHTML={{ __html: agv }}></div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="icon-slide" dangerouslySetInnerHTML={{ __html: fruitist }}></div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src={house} alt="house select" />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src={microcash} alt="microcash" />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src={armadillo} alt="armadillo" />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src={clinica} alt="Clinica veterinaria champagnat" />
-                        </SwiperSlide>
+                        {
+                            companies.map((company) => (
+                                <SwiperSlide>
+                                    {
+                                        company.isImg ? (
+                                            <div className="flex items-center gap-5">
+                                                <img src={company.img} alt={company.name} />
+                                            </div>
+                                        ) : (
+                                             <div className="flex items-center gap-5">
+                                                <div className="icon-slide" dangerouslySetInnerHTML={{ __html: company.img }}></div>
+                                            </div>
+                                        )
+                                    }                        
+                                </SwiperSlide>
+                            ))
+                        }
                     </Swiper>
                 </div>
             </div>

@@ -16,5 +16,5 @@ export const typeExperience: ReadonlyArray<TypeExperience> = [
     }
 ]
 
-export const workExperience = findValue({ array: typeExperience, key: "id", value: 1, returnkey: "name" });
-export const personalExperience = findValue({ array: typeExperience, key: "id", value: 2, returnkey: "name" });
+export const workExperience = findValue({ array: typeExperience, key: "id", value: 1, returnkey: "name" , isReturn: true});
+export const personalExperience = findValue({ array: typeExperience, key: "id", value: 2, returnkey: "name" , isReturn: true});

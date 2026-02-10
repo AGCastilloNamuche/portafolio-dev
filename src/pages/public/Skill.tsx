@@ -1,9 +1,3 @@
-import agv from '../../assets/images/AGV.svg??raw'
-import fruitist from '../../assets/images/fruitist.svg??raw'
-import ccd from '../../assets/images/ccd-logo.svg??raw'
-import house from '../../assets/images/logo-house.png'
-import microcash from '../../assets/images/microcash.png'
-import { IconApi, IconBrandCss3, IconBrandDjango, IconBrandFlutter, IconBrandJavascript, IconBrandLaravel, IconBrandMysql, IconBrandNodejs, IconBrandPhp, IconBrandPython, IconBrandReact, IconBrandSafari, IconBrandTailwind, IconBrandTypescript, IconBrandVue, IconCircleDashedLetterG, IconCircleDashedLetterP, IconCircleDashedLetterQ, IconCircleDashedLetterR, IconCloudComputing, IconFlame, IconGalaxy, IconPackageExport, IconSql, IconWorld, IconWorldPin } from '@tabler/icons-react'
 import { companies } from '../../lib/db/company'
 import { workExperience } from '../../lib/db/type_experience'
 import { experience, schedule } from '../../lib/db/experience'
@@ -61,7 +55,7 @@ const Skill = () => {
                 <div className="lg:col-span-3">
                     <div className="flex flex-col gap-5">
                         {
-                            experience.map((exp) => {
+                            experience.filter((exp) => exp.typeExperience === workExperience).map((exp) => {
                                 return (
                                     <div className="card !bg-transparent card-flat">
                                         <div className="grid grid-cols-5">

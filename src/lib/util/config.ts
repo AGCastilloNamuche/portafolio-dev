@@ -15,13 +15,16 @@ export const findValue = <T, K extends keyof T> ({
     array,
     key,
     value,
+    isReturn = false,
     returnkey
 } : {
     array : readonly T[],
     key:K, 
     value:T[K], 
-    returnkey:keyof T 
+    returnkey:keyof T ,
+    isReturn?:boolean,
 }) : any => {
     const items = array.find((item) => value === item[key])
-    return items ? items[returnkey] : ""
+    if (!items) return ""
+    return isReturn ? items[returnkey] : items 
 }
