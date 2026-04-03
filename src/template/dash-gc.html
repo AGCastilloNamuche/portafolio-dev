@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Glassmorphism - Dark/Light Mode</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 0;
+        margin: 0;
+        transition: background-color 0.3s ease;
+      }
+
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body class="">
+    <div
+      class="w-full h-full shadow-none transition-colors duration-500 bg-[#f3f4f8] dark:bg-[#4D505D] text-gray-800 dark:text-white"
+    >
+      <div
+        class="absolute -bottom-40 -left-40 w-[500px] h-full bg-[#D09A5B] rounded-full blur-[120px] opacity-40 dark:opacity-70 pointer-events-none transition-opacity duration-500"
+      ></div>
+
+      <div class="relative z-10 w-full h-full flex p-6 gap-6">
+        <div
+          class="fixed flex flex-col justify-between items-center py-4 w-16 h-full"
+        >
+          <div
+            class="w-10 h-10 rounded-full border-2 border-gray-400 dark:border-white/20 flex items-center justify-center transition-colors"
+          >
+            <div
+              class="w-4 h-4 rounded-full border-2 border-gray-600 dark:border-white transition-colors"
+            ></div>
+          </div>
+
+          <div
+            class="bg-white/60 dark:bg-white/10 backdrop-blur-md border border-white/40 dark:border-white/10 rounded-full py-6 px-2 flex flex-col gap-6 shadow-sm dark:shadow-none transition-colors"
+          >
+            <div
+              class="bg-gray-800 text-white dark:bg-white dark:text-black p-2 rounded-full cursor-pointer shadow-lg transition-colors"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                ></path>
+              </svg>
+            </div>
+
+            <div
+              class="p-2 text-gray-400 hover:text-gray-800 dark:text-white/50 dark:hover:text-white cursor-pointer transition-colors"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+                ></path>
+              </svg>
+            </div>
+            <div
+              class="p-2 text-gray-400 hover:text-gray-800 dark:text-white/50 dark:hover:text-white cursor-pointer transition-colors"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                ></path>
+              </svg>
+            </div>
+            <div
+              class="p-2 text-gray-400 hover:text-gray-800 dark:text-white/50 dark:hover:text-white cursor-pointer transition-colors"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+
+          <div
+            class="w-10 h-10 mb-8 rounded-full border border-gray-300 dark:border-white/20 flex items-center justify-center text-gray-400 dark:text-white/50 cursor-pointer transition-colors"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              ></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="ml-[5rem] flex-1 flex flex-col pt-2 pr-4">
+          <div class="flex justify-between items-center w-full mb-8">
+            <div class="ml-auto flex items-center gap-4">
+              <button
+                id="theme-toggle"
+                class="bg-white/60 dark:bg-white/10 backdrop-blur-md border border-white/40 dark:border-white/10 rounded-full p-1 flex gap-2 items-center cursor-pointer shadow-sm dark:shadow-none transition-colors"
+              >
+                <div
+                  id="moon-btn"
+                  class="p-1 text-gray-400 dark:text-white/50 rounded-full transition-all duration-300"
+                >
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                    ></path>
+                  </svg>
+                </div>
+                <div
+                  id="sun-btn"
+                  class="bg-white text-black p-1 rounded-full shadow transition-all duration-300"
+                >
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+
+              <div
+                class="w-10 h-10 rounded-full border border-gray-300 dark:border-white/20 flex items-center justify-center text-gray-400 dark:text-white/50 cursor-pointer transition-colors"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  ></path>
+                </svg>
+              </div>
+              <img
+                src="https://i.pravatar.cc/100?img=33"
+                alt="Profile"
+                class="w-10 h-10 rounded-full border-2 border-[#D09A5B]"
+              />
+            </div>
+          </div>
+
+          <div class="flex justify-between flex-wrap gap-2 items-end mb-8">
+            <div>
+              <h1
+                class="text-4xl font-bold mb-2 text-gray-900 dark:text-white transition-colors"
+              >
+                ¡Buenos días, Gian Pierre!
+              </h1>
+              <p class="text-gray-500 dark:text-white/60 transition-colors">
+                Hagamos que este día sea productivo.
+              </p>
+            </div>
+
+            <div class="flex items-center gap-12">
+              <div>
+                <p
+                  class="text-gray-500 dark:text-white/60 text-sm mb-1 transition-colors"
+                >
+                  Tareas realizadas
+                </p>
+                <p
+                  class="text-4xl font-semibold text-gray-900 dark:text-white transition-colors"
+                >
+                  2,543
+                </p>
+              </div>
+              <div>
+                <p
+                  class="text-gray-500 dark:text-white/60 text-sm mb-1 transition-colors"
+                >
+                  Horas ahorradas
+                </p>
+                <p
+                  class="text-4xl font-semibold text-gray-900 dark:text-white transition-colors"
+                >
+                  82%
+                </p>
+              </div>
+              <button
+                class="bg-gray-900 text-white dark:bg-white dark:text-black px-6 py-3 rounded-full font-semibold flex items-center gap-2 hover:bg-gray-700 dark:hover:bg-gray-100 transition shadow-lg"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 4v16m8-8H4"
+                  ></path>
+                </svg>
+                Agregar tarea
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-12 gap-6 flex-1">
+            <div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+              <div
+                class="bg-white/60 dark:bg-white/5 backdrop-blur-xl border border-white/40 dark:border-white/10 rounded-[32px] p-6 flex flex-col flex-1 shadow-xl dark:shadow-lg relative transition-colors"
+              >
+                <img
+                  src="https://i.pravatar.cc/100?img=11"
+                  alt="Bot"
+                  class="absolute -top-4 right-6 w-12 h-12 rounded-full border-4 border-white dark:border-[#4D505D] bg-[#2A2B31] shadow-xl object-cover transition-colors"
+                />
+
+                <div class="flex gap-2 mb-6">
+                  <div
+                    class="w-10 h-10 rounded-full border border-gray-300 dark:border-white/20 flex items-center justify-center text-gray-400 dark:text-white/50 transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div
+                    class="w-10 h-10 rounded-full bg-white dark:bg-white/10 shadow-sm dark:shadow-none flex items-center justify-center text-yellow-500 dark:text-[#F6E17C] transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div
+                    class="w-10 h-10 rounded-full border border-gray-300 dark:border-white/20 flex items-center justify-center text-gray-400 dark:text-white/50 transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                      ></path>
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+
+                <div
+                  class="bg-white dark:bg-white/10 shadow-sm dark:shadow-none rounded-[20px] rounded-tl-sm p-4 text-sm leading-relaxed mb-auto transition-colors"
+                >
+                  <p>
+                    ¡Hola! Soy asistente virtual.<br />¿En qué puedo ayudarle
+                    hoy?
+                    <span
+                      class="text-gray-400 dark:text-white/40 float-right mt-1 text-xs transition-colors"
+                      >9:32</span
+                    >
+                  </p>
+                </div>
+
+                <div
+                  class="mt-4 flex items-center bg-transparent border border-gray-300 dark:border-white/20 rounded-full px-4 py-3 transition-colors"
+                >
+                  <input
+                    type="text"
+                    placeholder="Escribe un mensaje"
+                    class="bg-transparent text-sm text-gray-900 dark:text-white focus:outline-none w-full placeholder-gray-400 dark:placeholder-white/50 transition-colors"
+                  />
+                  <div
+                    class="flex gap-3 text-gray-400 dark:text-white/50 transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5 cursor-pointer hover:text-gray-600 dark:hover:text-white transition"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"
+                      ></path>
+                    </svg>
+                    <svg
+                      class="w-5 h-5 cursor-pointer hover:text-gray-600 dark:hover:text-white transition"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      ></path>
+                    </svg>
+                    <svg
+                      class="w-5 h-5 cursor-pointer hover:text-gray-600 dark:hover:text-white transition"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-white/60 dark:bg-white/5 backdrop-blur-xl border border-white/40 dark:border-white/10 rounded-[32px] p-6 shadow-xl dark:shadow-lg transition-colors"
+              >
+                <div class="flex justify-between items-start mb-4">
+                  <div>
+                    <h3
+                      class="font-semibold text-lg text-gray-900 dark:text-white transition-colors"
+                    >
+                      Lista de tareas pendientes
+                    </h3>
+                    <p
+                      class="text-xs text-gray-500 dark:text-white/50 transition-colors"
+                    >
+                      Miércoles, 11 de mayo
+                    </p>
+                  </div>
+                  <div
+                    class="w-8 h-8 rounded-full border border-gray-300 dark:border-white/20 flex items-center justify-center cursor-pointer text-gray-400 dark:text-white/50 transition-colors"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 10l7-7m0 0l7 7m-7-7v18"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+
+                <div
+                  class="flex items-center justify-between border-b border-gray-200 dark:border-white/10 pb-4 mb-4 transition-colors"
+                >
+                  <div>
+                    <p
+                      class="text-sm line-through text-gray-400 dark:text-white/60 transition-colors"
+                    >
+                      Reseñas y comentarios de los clientes Comentarios
+                    </p>
+                    <p
+                      class="text-xs text-gray-400 dark:text-white/40 mt-1 transition-colors"
+                    >
+                      Landing page redesign
+                    </p>
+                  </div>
+                  <div
+                    class="w-6 h-6 rounded-full bg-yellow-400 dark:bg-[#F6E17C] text-black flex items-center justify-center shadow-sm"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="flex items-center justify-between">
+                  <p
+                    class="text-xs text-gray-500 dark:text-white/50 transition-colors"
+                  >
+                    Hoy
+                    <span
+                      class="text-gray-900 dark:text-white ml-2 transition-colors"
+                      >10:00 PM - 11:45 PM</span
+                    >
+                  </p>
+                  <div class="flex -space-x-2">
+                    <img
+                      src="https://i.pravatar.cc/100?img=1"
+                      class="w-6 h-6 rounded-full border border-white dark:border-gray-600 transition-colors"
+                    />
+                    <img
+                      src="https://i.pravatar.cc/100?img=2"
+                      class="w-6 h-6 rounded-full border border-white dark:border-gray-600 transition-colors"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-span-12 lg:col-span-8 flex flex-col gap-6">
+              <div
+                class="bg-white/60 dark:bg-white/5 backdrop-blur-xl border border-white/40 dark:border-white/10 rounded-[32px] p-6 shadow-xl dark:shadow-lg flex-1 transition-colors"
+              >
+                <div class="flex justify-between items-start mb-6">
+                  <div>
+                    <h3
+                      class="font-semibold text-lg text-gray-900 dark:text-white transition-colors"
+                    >
+                      Mi actividad
+                    </h3>
+                    <p
+                      class="text-xs text-gray-500 dark:text-white/50 transition-colors"
+                    >
+                      ¿Qué te espera hoy?
+                    </p>
+                  </div>
+                  <div
+                    class="w-10 h-10 rounded-full border border-gray-300 dark:border-white/20 flex items-center justify-center cursor-pointer transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5 text-gray-500 dark:text-white/70 transition-colors"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+
+                <div
+                  class="relative w-full h-48 mt-4 border-t border-gray-200 dark:border-white/10 pt-4 transition-colors"
+                >
+                  <div
+                    class="flex justify-between text-[10px] text-gray-500 dark:text-white/40 mb-4 px-2 transition-colors"
+                  >
+                    <span>07:00</span><span>08:00</span><span>09:00</span
+                    ><span>10:00</span><span>11:00</span>
+                    <span
+                      class="text-gray-900 dark:text-white relative transition-colors font-semibold dark:font-normal"
+                      >12:00
+                      <div
+                        class="absolute left-1/2 -ml-[1px] top-6 w-[2px] h-32 bg-gray-300 dark:bg-white/50 rounded-full transition-colors"
+                      ></div>
+                      <div
+                        class="absolute left-1/2 -ml-1 top-[14px] w-2 h-2 bg-gray-800 dark:bg-white rounded-full transition-colors"
+                      ></div>
+                    </span>
+                    <span>01:00</span><span>02:00</span>
+                  </div>
+
+                  <div
+                    class="absolute inset-0 top-10 flex justify-between px-4 pointer-events-none"
+                  >
+                    <div
+                      class="w-[1px] h-full bg-transparent border-l border-dashed border-gray-300 dark:border-white/10 transition-colors"
+                    ></div>
+                    <div
+                      class="w-[1px] h-full bg-transparent border-l border-dashed border-gray-300 dark:border-white/10 transition-colors"
+                    ></div>
+                    <div
+                      class="w-[1px] h-full bg-transparent border-l border-dashed border-gray-300 dark:border-white/10 transition-colors"
+                    ></div>
+                    <div
+                      class="w-[1px] h-full bg-transparent border-l border-dashed border-gray-300 dark:border-white/10 transition-colors"
+                    ></div>
+                    <div
+                      class="w-[1px] h-full bg-transparent border-l border-dashed border-gray-300 dark:border-white/10 transition-colors"
+                    ></div>
+                    <div class="w-[1px] h-full bg-transparent"></div>
+                    <div
+                      class="w-[1px] h-full bg-transparent border-l border-dashed border-gray-300 dark:border-white/10 transition-colors"
+                    ></div>
+                    <div
+                      class="w-[1px] h-full bg-transparent border-l border-dashed border-gray-300 dark:border-white/10 transition-colors"
+                    ></div>
+                  </div>
+
+                  <div class="absolute top-10 w-full h-full">
+                    <div
+                      class="absolute left-[5%] top-2 w-[28%] bg-yellow-300 dark:bg-[#F6E17C] text-black rounded-2xl p-3 flex justify-between items-center shadow-md transition-colors z-10"
+                    >
+                      <div>
+                        <p class="text-xs font-bold">
+                          Incorporación de proyectos
+                        </p>
+                        <p class="text-[10px] opacity-70">Google Meeting</p>
+                      </div>
+                      <div class="flex -space-x-2">
+                        <img
+                          src="https://i.pravatar.cc/100?img=5"
+                          class="w-6 h-6 rounded-full border border-yellow-300 dark:border-[#F6E17C]"
+                        />
+                        <div
+                          class="w-6 h-6 rounded-full bg-black text-white text-[10px] flex items-center justify-center font-bold border border-yellow-300 dark:border-[#F6E17C]"
+                        >
+                          +2
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="absolute left-[25%] top-[70px] w-[30%] bg-[#4A4B56] text-white rounded-2xl p-3 flex justify-between items-center shadow-md border border-white/5 z-20"
+                    >
+                      <div>
+                        <p class="text-xs font-bold">Investigación de diseño</p>
+                        <p class="text-[10px] text-white/70">Figma file</p>
+                      </div>
+                      <div class="flex -space-x-2">
+                        <img
+                          src="https://i.pravatar.cc/100?img=8"
+                          class="w-6 h-6 rounded-full border border-[#4A4B56]"
+                        />
+                        <div
+                          class="w-6 h-6 rounded-full bg-white text-black text-[10px] flex items-center justify-center font-bold border border-[#4A4B56]"
+                        >
+                          +5
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="absolute left-[62%] top-[130px] w-[18%] bg-blue-200 dark:bg-[#C9D6FF] text-black rounded-2xl p-3 shadow-md z-10 transition-colors"
+                    >
+                      <p class="text-xs font-bold">Coffee break</p>
+                      <p class="text-[10px] opacity-70">Co&Co Café</p>
+                    </div>
+
+                    <div
+                      class="absolute left-[34%] top-2 w-[18%] h-12 bg-white/50 dark:bg-white/5 rounded-2xl transition-colors"
+                    ></div>
+                    <div
+                      class="absolute left-[56%] top-[70px] w-[12%] h-12 bg-white/50 dark:bg-white/5 rounded-2xl transition-colors"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-white/60 dark:bg-white/5 backdrop-blur-xl border border-white/40 dark:border-white/10 rounded-[32px] p-6 shadow-xl dark:shadow-lg h-56 relative overflow-hidden transition-colors"
+              >
+                <div
+                  class="absolute -right-10 -top-10 w-32 h-32 bg-[#F6E17C]/30 blur-3xl rounded-full pointer-events-none"
+                ></div>
+                <div
+                  class="absolute left-10 bottom-0 w-40 h-24 bg-[#D09A5B]/10 blur-3xl rounded-full pointer-events-none"
+                ></div>
+
+                <div
+                  class="relative z-10 flex justify-between items-start mb-5"
+                >
+                  <div>
+                    <h3
+                      class="font-semibold text-lg text-gray-900 dark:text-white transition-colors"
+                    >
+                      Resumen
+                    </h3>
+                    <p
+                      class="text-xs text-gray-500 dark:text-white/50 transition-colors"
+                    >
+                      Seguimiento de tu rendimiento semanal
+                    </p>
+                  </div>
+
+                  <div class="flex items-center gap-2">
+                    <button
+                      class="px-3 py-1.5 rounded-full bg-gray-900 text-white dark:bg-white dark:text-black text-xs font-semibold shadow transition-colors"
+                    >
+                      Semana
+                    </button>
+                    <button
+                      class="px-3 py-1.5 rounded-full bg-white/70 dark:bg-white/10 border border-gray-200 dark:border-white/10 text-xs text-gray-500 dark:text-white/60 transition-colors"
+                    >
+                      Mes
+                    </button>
+                    <div
+                      class="w-8 h-8 rounded-full border border-gray-300 dark:border-white/20 flex items-center justify-center cursor-pointer text-gray-400 dark:text-white/50 transition-colors"
+                    >
+                      <svg
+                        class="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="relative z-10 grid grid-cols-12 gap-4 items-stretch h-[145px]"
+                >
+                  <div class="col-span-12 md:col-span-4">
+                    <div
+                      class="h-full rounded-[24px] bg-white/70 dark:bg-white/10 border border-white/50 dark:border-white/10 p-4 flex flex-col justify-between transition-colors"
+                    >
+                      <div>
+                        <p
+                          class="text-xs text-gray-500 dark:text-white/50 mb-2 transition-colors"
+                        >
+                          Productividad
+                        </p>
+                        <div class="flex items-end gap-2">
+                          <span
+                            class="text-3xl font-bold text-gray-900 dark:text-white leading-none transition-colors"
+                            >203</span
+                          >
+                          <span
+                            class="text-[11px] font-semibold px-2 py-1 rounded-full bg-[#F6E17C] text-black shadow-sm"
+                          >
+                            +18%
+                          </span>
+                        </div>
+                        <p
+                          class="text-xs text-gray-500 dark:text-white/50 mt-2 transition-colors"
+                        >
+                          respecto a la semana pasada
+                        </p>
+                      </div>
+
+                      <div class="space-y-2 pt-3">
+                        <div class="flex items-center justify-between text-xs">
+                          <div class="flex items-center gap-2">
+                            <span
+                              class="w-2.5 h-2.5 rounded-full bg-[#F6E17C]"
+                            ></span>
+                            <span
+                              class="text-gray-600 dark:text-white/70 transition-colors"
+                              >Tareas completadas</span
+                            >
+                          </div>
+                          <span
+                            class="text-gray-900 dark:text-white font-medium transition-colors"
+                            >124</span
+                          >
+                        </div>
+
+                        <div class="flex items-center justify-between text-xs">
+                          <div class="flex items-center gap-2">
+                            <span
+                              class="w-2.5 h-2.5 rounded-full bg-gray-900 dark:bg-white"
+                            ></span>
+                            <span
+                              class="text-gray-600 dark:text-white/70 transition-colors"
+                              >Tiempo de enfoque</span
+                            >
+                          </div>
+                          <span
+                            class="text-gray-900 dark:text-white font-medium transition-colors"
+                            >79 h</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-span-12 md:col-span-8">
+                    <div
+                      class="relative h-full rounded-[24px] bg-white/35 dark:bg-white/[0.03] border border-white/40 dark:border-white/10 px-4 pt-3 pb-7 transition-colors"
+                    >
+                      <div
+                        class="absolute inset-x-4 top-6 space-y-5 pointer-events-none"
+                      >
+                        <div
+                          class="border-t border-dashed border-gray-300 dark:border-white/10"
+                        ></div>
+                        <div
+                          class="border-t border-dashed border-gray-300 dark:border-white/10"
+                        ></div>
+                        <div
+                          class="border-t border-dashed border-gray-300 dark:border-white/10"
+                        ></div>
+                      </div>
+
+                      <div
+                        class="absolute left-4 top-2 bottom-7 flex flex-col justify-between text-[10px] text-gray-400 dark:text-white/35 transition-colors"
+                      >
+                        <span>300</span>
+                        <span>200</span>
+                        <span>100</span>
+                        <span>0</span>
+                      </div>
+
+                      <div class="ml-8 h-full relative">
+                        <svg
+                          class="w-full h-full"
+                          viewBox="0 0 320 140"
+                          preserveAspectRatio="none"
+                        >
+                          <defs>
+                            <linearGradient
+                              id="summaryArea"
+                              x1="0"
+                              y1="0"
+                              x2="0"
+                              y2="1"
+                            >
+                              <stop
+                                offset="0%"
+                                stop-color="#F6E17C"
+                                stop-opacity="0.42"
+                              />
+                              <stop
+                                offset="100%"
+                                stop-color="#F6E17C"
+                                stop-opacity="0.02"
+                              />
+                            </linearGradient>
+
+                            <linearGradient
+                              id="summaryLine"
+                              x1="0"
+                              y1="0"
+                              x2="1"
+                              y2="0"
+                            >
+                              <stop offset="0%" stop-color="#E8D45D" />
+                              <stop offset="100%" stop-color="#F6E17C" />
+                            </linearGradient>
+                          </defs>
+
+                          <!-- área -->
+                          <path
+                            d="M0,115 
+                 C25,108 35,102 52,96
+                 C72,88 88,92 105,84
+                 C125,74 140,60 158,66
+                 C178,72 193,52 212,44
+                 C232,36 250,40 266,30
+                 C284,18 301,20 320,12
+                 L320,140 L0,140 Z"
+                            fill="url(#summaryArea)"
+                          ></path>
+
+                          <!-- línea principal -->
+                          <path
+                            d="M0,115 
+                 C25,108 35,102 52,96
+                 C72,88 88,92 105,84
+                 C125,74 140,60 158,66
+                 C178,72 193,52 212,44
+                 C232,36 250,40 266,30
+                 C284,18 301,20 320,12"
+                            fill="none"
+                            stroke="url(#summaryLine)"
+                            stroke-width="4"
+                            stroke-linecap="round"
+                          ></path>
+
+                          <!-- puntos -->
+                          <circle cx="52" cy="96" r="4" fill="#F6E17C"></circle>
+                          <circle
+                            cx="158"
+                            cy="66"
+                            r="4"
+                            fill="#F6E17C"
+                          ></circle>
+                          <circle
+                            cx="266"
+                            cy="30"
+                            r="5"
+                            fill="#F6E17C"
+                            stroke="white"
+                            stroke-width="3"
+                            class="dark:stroke-[#4D505D] transition-colors"
+                          ></circle>
+                        </svg>
+
+                        <!-- tooltip -->
+                        <div
+                          class="absolute right-[10%] top-[8%] bg-gray-900 text-white dark:bg-white dark:text-black text-[11px] font-bold px-2.5 py-1.5 rounded-full shadow-lg transition-colors"
+                        >
+                          203 tareas
+                        </div>
+
+                        <!-- etiquetas eje x -->
+                        <div
+                          class="absolute bottom-0 left-0 right-0 flex justify-between text-[10px] text-gray-400 dark:text-white/35 transition-colors"
+                        >
+                          <span>Lun</span>
+                          <span>Mar</span>
+                          <span>Mié</span>
+                          <span>Jue</span>
+                          <span>Vie</span>
+                          <span>Sáb</span>
+                          <span>Dom</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const htmlElement = document.documentElement;
+      const themeToggleBtn = document.getElementById("theme-toggle");
+      const moonBtn = document.getElementById("moon-btn");
+      const sunBtn = document.getElementById("sun-btn");
+
+      themeToggleBtn.addEventListener("click", () => {
+        // Alternar la clase 'dark' en el elemento html
+        htmlElement.classList.toggle("dark");
+
+        // Animación visual de los botones internos
+        if (htmlElement.classList.contains("dark")) {
+          moonBtn.className =
+            "bg-gray-800 text-white p-1 rounded-full shadow transition-all duration-300";
+          sunBtn.className =
+            "p-1 text-gray-400 rounded-full transition-all duration-300";
+        } else {
+          moonBtn.className =
+            "p-1 text-gray rounded-full transition-all duration-300";
+          sunBtn.className =
+            "bg-white text-black p-1 rounded-full shadow transition-all duration-300";
+        }
+      });
+    </script>
+  </body>
+</html>

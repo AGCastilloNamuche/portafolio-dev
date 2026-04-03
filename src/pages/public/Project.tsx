@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { Tabs } from "../../components";
 import { category } from "../../lib/db/category";
-import { projects, type Project } from "../../lib/db/projects";
+import { projects, type Projects } from "../../lib/db/projects";
 
 // ===== pre-index fuera del componente (se calcula 1 vez por carga del módulo) =====
 type ProjectType = (typeof projects)[number];
@@ -16,7 +16,7 @@ const PROJECTS_BY_KEY: Record<string, ProjectType[]> = projects.reduce(
 );
 
 const TAB_LIST_CLASS =
-  "bg-[#ffffff4f] border border-[#FFFFFF0F] gap-2 rounded-[2rem] backdrop-blur-[200px] !px-2 !py-2";
+  "bg-[#ffffff4f] dark:bg-[#233831b3] border border-[#FFFFFF0F] gap-2 rounded-[2rem] backdrop-blur-[20px] !px-2 !py-2";
 
 const ProjectGrid = React.memo(function ProjectGrid({
   items,
@@ -26,7 +26,7 @@ const ProjectGrid = React.memo(function ProjectGrid({
   return (
     <div className="grid gap-5 md:grid-cols-2 lg:!grid-cols-3">
       {items.map((pr) => (
-        <a className="cursor-pointer" key={pr.id} href="#">
+        <a className="cursor-pointer" key={pr.id} href={`projects/${pr.id}`}>
           <article>
             <div className="card p-0 !bg-transparent !shadow-none">
               <figure className="w-100 overflow-hidden rounded-3xl">
@@ -40,8 +40,10 @@ const ProjectGrid = React.memo(function ProjectGrid({
               </figure>
 
               <div className="card-body !px-4 !py-4">
-                <h2 className="card-title text-[#13765e]">{pr.title}</h2>
-                <p>{pr.category.name}</p>
+                <h2 className="card-title text-[#13765e] dark:text-[#b9ffee]">
+                  {pr.title}
+                </h2>
+                <p className="dark:text-white">{pr.category.name}</p>
               </div>
             </div>
           </article>

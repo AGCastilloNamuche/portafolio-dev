@@ -33,7 +33,8 @@ const STYLES = {
   underline: {
     btnBase:
       "relative -mb-px px-3 py-2 text-sm font-medium transition focus:outline-none focus:ring-gray-300",
-    btnActive: "border-b-2 border-gray-200 text-white",
+    btnActive:
+      "border-b-2 border-gray-500 dark:border-gray-200 text-black dark:text-white",
     btnInactive: "text-gray-600 hover:text-gray-900",
     btnDisabled: "text-gray-400 cursor-not-allowed",
     panel: "pt-4",
@@ -155,17 +156,17 @@ export function Tabs<TId extends string = string>({
                       <span className="w-56 h-100 rounded bg-gradient-to-r from-[#13765e] to-[#6BFDD9] absolute bottom-0 left-0 translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0" />
                       <span
                         className={cx(
-                          "relative w-full text-center transition-colors duration-300 ease-in-out",
+                          "relative w-full text-center transition-colors duration-300 line-clamp-1  ease-in-out",
                           isActive
                             ? "text-gray-900"
-                            : "text-[#13765e] group-hover:text-white",
+                            : "text-[#13765e] dark:text-[#b9ffee] group-hover:text-white",
                         )}
                       >
                         {tab.label}
                       </span>
                     </>
                   ) : (
-                    tab.label
+                    <span className="line-clamp-1">{tab.label}</span>
                   )}
                 </button>
               );

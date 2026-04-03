@@ -8,7 +8,8 @@ export const category: ReadonlyArray<Category> = [
     {
         id: 1,
         name: "Desarrollo Web",
-        key: "web-development"
+        key: "web-development",
+        
     },
     {
         id: 2,

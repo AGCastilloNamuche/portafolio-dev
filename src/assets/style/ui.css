@@ -14,6 +14,13 @@ h6 {
     font-family: "acorn", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
+.font-acorn {
+    font-family: "acorn", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+.theme-dark .company-icon svg path {
+    fill: white;
+}
 
 .line-height-1 {
     line-height: 1 !important;
@@ -415,10 +422,7 @@ h6 {
     background-color: var(--color-dark-white50);
 }
 
-.card-wrap {
-    padding: var(--42px) var(--64px);
-    border-radius: var(--64px);
-}
+
 
 .card-subtitle {
     text-transform: uppercase;
@@ -479,19 +483,7 @@ h6 {
     width: 384px;
     height: 384px;
     overflow: hidden;
-    /* grid-column-start: 4;
-    grid-column-end: 10;
-    margin-top: max(var(--14px), calc(var(--14px) + (28 - 14) * ((100vw - 375px) / (1600 - 375)))); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-/* .avatar-profile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.container-text-profile {
-    grid-column-start: 12;
-    grid-column-end: 24;
-    margin-top: var(--24px);
-} */

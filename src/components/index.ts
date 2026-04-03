@@ -4,4 +4,8 @@ export { default as Footer } from "./Footer";
 export { default as EditWell } from "./EditWell";
 export { Tabs } from "./Tabs";
 export { default as CountUp } from "./CountUp";
-
+export { default as BottomNav } from "./BottomNav";
+export { default as LiveEditor } from "./LiveEditor";
+export { default as UniverseSkills } from "./UniverseSkills";
+export { default as Breadcrumbs } from "./Breadcrumbs";
+export { default as Chatbot } from "./Chatbot";

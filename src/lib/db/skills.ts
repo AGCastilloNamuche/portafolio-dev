@@ -1,291 +1,587 @@
-import { IconApi, IconBrandAdobeIllustrator, IconBrandAdobeIndesign, IconBrandAdobePhotoshop, IconBrandAdobeXd, IconBrandCss3, IconBrandDeviantart, IconBrandDjango, IconBrandDocker, IconBrandFigma, IconBrandFirebase, IconBrandFlutter, IconBrandFramer, IconBrandGit, IconBrandGithub, IconBrandGitlab, IconBrandHtml5, IconBrandJavascript, IconBrandLaravel, IconBrandMongodb, IconBrandMysql, IconBrandNodejs, IconBrandPhp, IconBrandPython, IconBrandQq, IconBrandReact, IconBrandSafari, IconBrandTailwind, IconBrandTrello, IconBrandTypescript, IconBrandVite, IconBrandVue, IconCircleDashedLetterG, IconCircleDashedLetterP, IconCircleDashedLetterQ, IconCircleDashedLetterR, IconCircleDottedLetterA, IconCircleDottedLetterC, IconCircleDottedLetterD, IconCircleDottedLetterG, IconCircleDottedLetterR, IconCloudComputing, IconCurrencyIranianRial, IconFlame, IconGalaxy, IconPackageExport, IconSql, IconWorldPin } from '@tabler/icons-react'
+import { IconApi, IconBrandAdobeIllustrator, IconBrandAdobeIndesign, IconBrandAdobePhotoshop, IconBrandAdobeXd, IconBrandAws, IconBrandCss3, IconBrandDeviantart, IconBrandDjango, IconBrandDocker, IconBrandFigma, IconBrandFirebase, IconBrandFlutter, IconBrandFramer, IconBrandGit, IconBrandGithub, IconBrandGitlab, IconBrandHtml5, IconBrandJavascript, IconBrandLaravel, IconBrandMongodb, IconBrandMysql, IconBrandNodejs, IconBrandPhp, IconBrandPython, IconBrandQq, IconBrandReact, IconBrandSafari, IconBrandTailwind, IconBrandTrello, IconBrandTypescript, IconBrandVite, IconBrandVue, IconCircleDashedLetterG, IconCircleDashedLetterP, IconCircleDashedLetterQ, IconCircleDashedLetterR, IconCircleDottedLetterA, IconCircleDottedLetterC, IconCircleDottedLetterD, IconCircleDottedLetterG, IconCircleDottedLetterR, IconCloudComputing, IconCurrencyIranianRial, IconFlame, IconGalaxy, IconPackageExport, IconSql, IconWorldPin } from '@tabler/icons-react'
+import logoJs from "../../assets/javascript.svg"
+import logoReact from "../../assets/react.svg"
+import logoTypeScript from "../../assets/typescript.svg"
+import logoVue from "../../assets/vuejs.svg"
+import logoPython from "../../assets/python.svg"
+import logoDjango from "../../assets/django.svg"
+import logoPostgresql from "../../assets/postgresql.svg"
+import logoSql from "../../assets/microsoft-sql-server.svg"
+import logoMysql from "../../assets/mysql.svg"
+import logoDart from "../../assets/dart.svg"
+import logoFlutter from "../../assets/flutter.svg"
+import logoGdal from "../../assets/gdal.svg"
+import logoTailwind from "../../assets/tailwindcss.svg"
+import logoPhp from "../../assets/php.svg"
+import logoMongoDB from "../../assets/mongodb.svg"
+import logoCodeIgniter from "../../assets/codeigniter.svg"
+import logoDocker from "../../assets/docker.svg"
+import logoLaravel from "../../assets/laravel.svg"
+import logoVite from "../../assets/vite.svg"
+import logoNode from "../../assets/nodedotjs.svg"
+import logoGit from "../../assets/git.svg"
+import logoGithub from "../../assets/Github.svg"
+import logoArcgis from "../../assets/icon-64.svg"
+import logoSqlite from "../../assets/sqlite.svg"
+import logoPostgis from "../../assets/postgis.png"
+import logoJira from "../../assets/jira.svg"
+import logoFigma from "../../assets/Figma.svg"
+import logoMapbox from "../../assets/Mapbox.svg"
+import logoCss from "../../assets/css.svg"
+import logoHtml from "../../assets/HTML5.svg"
 
 export type Skill = {
     id: number;
     name: string;
-    img: string;
     icon: any;
+    logo: string;
 }
 
-export const skills: ReadonlyArray<Skill> = [
+export const skills: ReadonlyArray<Skill & any> = [
     {
         id: 1,
         name: "JavaScript",
-        img: "",
-        icon: IconBrandJavascript
+        icon: IconBrandJavascript,
+        logo: logoJs,
+        radius: 1.8,
+        color: 0xf7df1e,
+        orbitRadius: 10,
+        speed: 0.04,
+        type: "language",
+        visualType: "image",
+        isUniverse: true,
     },
     {
         id: 2,
         name: "TypeScript",
-        img: "",
-        icon: IconBrandTypescript
+        icon: IconBrandTypescript,
+        logo: logoTypeScript,
+        radius: 1.8,
+        color: 0x3178c6,
+        orbitRadius: 15,
+        speed: 0.033,
+        type: "language",
+        visualType: "image",
+        isUniverse: true,
     },
     {
         id: 3,
         name: "React",
-        img: "",
-        icon: IconBrandReact
+        icon: IconBrandReact,
+        logo: logoReact,
+        radius: 1.9,
+        color: 0x61dafb,
+        orbitRadius: 25,
+        speed: 0.024,
+        type: "framework",
+        visualType: "image",
+        isUniverse: true,
     },
     {
         id: 4,
         name: "Node.js",
-        img: "",
-        icon: IconBrandNodejs
+        icon: IconBrandNodejs,
+        logo: logoNode,
+        radius: 2.0,
+        color: 0x5fa04e,
+        orbitRadius: 133,
+        speed: 0.0036,
+        type: "runtime",
+        visualType: "image",
+        isUniverse: true,
     },
     {
         id: 5,
         name: "Django",
-        img: "",
-        icon: IconBrandDjango
+        icon: IconBrandDjango,
+        logo: logoDjango,
+        radius: 1.9,
+        color: 0x092e20,
+        orbitRadius: 35,
+        speed: 0.018,
+        type: "framework",
+        visualType: "image",
+        isUniverse: true,
     },
     {
         id: 6,
         name: "Python",
-        img: "",
-        icon: IconBrandPython
+        icon: IconBrandPython,
+        logo: logoPython,
+        radius: 1.9,
+        color: 0x3776ab,
+        orbitRadius: 30,
+        speed: 0.021,
+        type: "language",
+        visualType: "image",
+        isUniverse: true,
     },
     {
         id: 7,
         name: "Flutter",
-        img: "",
-        icon: IconBrandFlutter
+        icon: IconBrandFlutter,
+        logo: logoFlutter,
+        radius: 1.95,
+        color: 0x02569b,
+        orbitRadius: 70,
+        speed: 0.0085,
+        type: "framework",
+        visualType: "image",
+        isUniverse: true,
     },
     {
         id: 8,
         name: "Dart",
-        img: "",
-        icon: IconCircleDottedLetterD
+        icon: IconCircleDottedLetterD,
+        logo: logoDart,
+        radius: 1.9,
+        color: 0x0175c2,
+        orbitRadius: 63,
+        speed: 0.0095,
+        type: "language",
+        visualType: "image",
+        isUniverse: true,
     },
     {
         id: 9,
         name: "Git",
-        img: "",
-        icon: IconBrandGit
+        icon: IconBrandGit,
+        logo: logoGit,
+        radius: 1.7,
+        color: 0xf05032,
+        orbitRadius: 140,
+        speed: 0.0034,
+        type: "tool",
+        visualType: "image",
+        isUniverse: false,
     },
     {
         id: 10,
         name: "GitHub",
-        img: "",
-        icon: IconBrandGithub
+        icon: IconBrandGithub,
+        logo: logoGithub,
+        radius: 1.7,
+        color: 0x181717,
+        orbitRadius: 147,
+        speed: 0.0032,
+        type: "tool",
+        visualType: "image",
+        isUniverse: false,
     },
     {
         id: 11,
         name: "GitLab",
-        img: "",
-        icon: IconBrandGitlab
+        icon: IconBrandGitlab,
+        logo: "/assets/imagenes/gitlab.svg",
+        radius: 1.7,
+        color: 0xfca326,
+        orbitRadius: 154,
+        speed: 0.003,
+        type: "tool",
+        visualType: "image",
+        isUniverse: false,
     },
     {
         id: 12,
         name: "Jira",
-        img: "",
-        icon: IconCurrencyIranianRial
+        icon: IconCurrencyIranianRial,
+        logo: logoJira,
+        radius: 1.8,
+        color: 0x0052cc,
+        orbitRadius: 161,
+        speed: 0.0028,
+        type: "management",
+        visualType: "image",
+        isUniverse: false,
     },
     {
         id: 13,
         name: "Trello",
-        img: "",
-        icon: IconBrandTrello
+        icon: IconBrandTrello,
+        logo: "/assets/imagenes/trello.svg",
+        radius: 1.8,
+        color: 0x007ac1,
+        orbitRadius: 168,
+        speed: 0.0026,
+        type: "management",
+        visualType: "image",
+        isUniverse: false,
     },
     {
         id: 14,
         name: "Figma",
-        img: "",
-        icon: IconBrandFigma
+        icon: IconBrandFigma,
+        logo: logoFigma,
+        radius: 1.8,
+        color: 0xf24e1e,
+        orbitRadius: 175,
+        speed: 0.0024,
+        type: "design",
+        visualType: "image",
+        isUniverse: false,
     },
     {
         id: 15,
         name: "Adobe XD",
-        img: "",
-        icon: IconBrandAdobeXd
+        icon: IconBrandAdobeXd,
+        logo: "/assets/imagenes/adobe-xd.svg",
+        radius: 1.8,
+        color: 0xff61f6,
+        orbitRadius: 182,
+        speed: 0.0022,
+        type: "design",
+        visualType: "image",
+        isUniverse: false,
     },
     {
         id: 16,
         name: "Photoshop",
-        img: "",
-        icon: IconBrandAdobePhotoshop
+        icon: IconBrandAdobePhotoshop,
+        logo: "/assets/imagenes/photoshop.svg",
+        radius: 1.8,
+        color: 0x31a8ff,
+        orbitRadius: 189,
+        speed: 0.002,
+        type: "design",
+        visualType: "image",
+        isUniverse: false,
     },
     {
         id: 17,
         name: "Illustrator",
-        img: "",
-        icon: IconBrandAdobeIllustrator
+        icon: IconBrandAdobeIllustrator,
+        logo: "/assets/imagenes/illustrator.svg",
+        radius: 1.8,
+        color: 0xff9a00,
+        orbitRadius: 196,
+        speed: 0.0019,
+        type: "design",
+        visualType: "image",
+        isUniverse: false,
     },
     {
         id: 18,
         name: "InDesign",
-        img: "",
-        icon: IconBrandAdobeIndesign
+        icon: IconBrandAdobeIndesign,
+        logo: "/assets/imagenes/indesign.svg",
+        radius: 1.8,
+        color: 0xff3366,
+        orbitRadius: 203,
+        speed: 0.0018,
+        type: "design",
+        visualType: "image",
+        isUniverse: false,
     },
     {
         id: 19,
         name: "Canva",
-        img: "",
-        icon: IconCircleDottedLetterC
+        icon: IconCircleDottedLetterC,
+        logo: "/assets/imagenes/canva.svg",
+        radius: 1.8,
+        color: 0x00c4cc,
+        orbitRadius: 210,
+        speed: 0.0017,
+        type: "design",
+        visualType: "image",
+        isUniverse: false,
     },
     {
         id: 20,
         name: "Framer",
-        img: "",
-        icon: IconBrandFramer
+        icon: IconBrandFramer,
+        logo: "/assets/imagenes/framer.svg",
+        radius: 1.8,
+        color: 0x0055ff,
+        orbitRadius: 217,
+        speed: 0.0016,
+        type: "design",
+        visualType: "image",
+        isUniverse: false,
     },
     {
         id: 22,
         name: "Vue.js",
-        img: "",
-        icon: IconBrandVue
+        icon: IconBrandVue,
+        logo: logoVue,
+        radius: 1.9,
+        color: 0x4fc08d,
+        orbitRadius: 20,
+        speed: 0.028,
+        type: "framework",
+        visualType: "image",
+        isUniverse: true,
     },
     {
         id: 23,
         name: "Tailwind CSS",
-        img: "",
-        icon: IconBrandTailwind
+        icon: IconBrandTailwind,
+        logo: logoTailwind,
+        radius: 1.95,
+        color: 0x06b6d4,
+        orbitRadius: 84,
+        speed: 0.0068,
+        type: "css",
+        visualType: "image",
+        isUniverse: true,
     },
     {
         id: 24,
         name: "ArcGIS API JS",
-        img: "",
-        icon: IconCircleDottedLetterA
+        icon: IconCircleDottedLetterA,
+        logo: logoArcgis,
+        radius: 2.1,
+        color: 0x007ac2,
+        orbitRadius: 224,
+        speed: 0.0015,
+        type: "geospatial",
+        visualType: "image",
+        isUniverse: false,
     },
     {
         id: 25,
         name: "GeoPandas",
-        img: "",
-        icon: IconCircleDottedLetterG
+        icon: IconCircleDottedLetterG,
+        logo: "/assets/imagenes/geopandas.svg",
+        radius: 2.1,
+        color: 0x139c5a,
+        orbitRadius: 231,
+        speed: 0.0014,
+        type: "geospatial",
+        visualType: "image",
+        isUniverse: false,
     },
     {
         id: 26,
         name: "GDAL",
-        img: "",
-        icon: IconWorldPin
+        icon: IconWorldPin,
+        logo: logoGdal,
+        radius: 2.05,
+        color: 0x8b5cf6,
+        orbitRadius: 77,
+        speed: 0.0075,
+        type: "geospatial",
+        visualType: "image",
+        isUniverse: true,
     },
     {
         id: 27,
         name: "QGIS",
-        img: "",
-        icon: IconBrandQq
+        icon: IconBrandQq,
+        logo: "/assets/imagenes/qgis.svg",
+        radius: 2.1,
+        color: 0x589632,
+        orbitRadius: 238,
+        speed: 0.0013,
+        type: "geospatial",
+        visualType: "image",
+        isUniverse: false,
     },
     {
         id: 28,
         name: "PostgreSQL",
-        img: "",
-        icon: IconCircleDashedLetterP
+        icon: IconCircleDashedLetterP,
+        logo: logoPostgresql,
+        radius: 2.1,
+        color: 0x4169e1,
+        orbitRadius: 42,
+        speed: 0.015,
+        type: "database",
+        visualType: "image",
+        isUniverse: true,
     },
     {
         id: 29,
         name: "Mapbox",
-        img: "",
-        icon: IconBrandSafari
+        icon: IconBrandSafari,
+        logo: logoMapbox,
+        radius: 2.1,
+        color: 0x000000,
+        orbitRadius: 245,
+        speed: 0.0012,
+        type: "geospatial",
+        visualType: "image",
+        isUniverse: false,
     },
     {
         id: 30,
         name: "Rasterio",
-        img: "",
-        icon: IconCircleDashedLetterR
+        icon: IconCircleDashedLetterR,
+        logo: "/assets/imagenes/rasterio.svg",
+        radius: 2.1,
+        color: 0x217346,
+        orbitRadius: 252,
+        speed: 0.0011,
+        type: "geospatial",
+        visualType: "image",
+        isUniverse: false,
     },
     {
         id: 31,
         name: "CSS3",
-        img: "",
-        icon: IconBrandCss3
+        icon: IconBrandCss3,
+        logo: logoCss,
+        radius: 1.8,
+        color: 0x1572b6,
+        orbitRadius: 259,
+        speed: 0.001,
+        type: "design",
+        visualType: "image",
+        isUniverse: false,
     },
     {
         id: 32,
         name: "HTML5",
-        img: "",
-        icon: IconBrandHtml5
+        icon: IconBrandHtml5,
+        logo: logoHtml,
+        radius: 1.8,
+        color: 0xe34f26,
+        orbitRadius: 266,
+        speed: 0.0009,
+        type: "design",
+        visualType: "image",
+        isUniverse: false,
     },
     {
         id: 33,
         name: "Gestión logística",
-        img: "",
-        icon: IconPackageExport
+        icon: IconPackageExport,
+        logo: "/assets/imagenes/gestion-logistica.svg",
+        radius: 2.0,
+        color: 0x6b7280,
+        orbitRadius: 273,
+        speed: 0.0008,
+        type: "soft-skill",
+        visualType: "image",
+        isUniverse: false,
     },
     {
         id: 34,
         name: "PHP",
-        img: "",
-        icon: IconBrandPhp
+        icon: IconBrandPhp,
+        logo: logoPhp,
+        radius: 1.95,
+        color: 0x777bb4,
+        orbitRadius: 91,
+        speed: 0.0061,
+        type: "language",
+        visualType: "image",
+        isUniverse: true,
     },
     {
         id: 35,
         name: "Laravel",
-        img: "",
-        icon: IconBrandLaravel
+        icon: IconBrandLaravel,
+        logo: logoLaravel,
+        radius: 2.0,
+        color: 0xff2d20,
+        orbitRadius: 119,
+        speed: 0.0042,
+        type: "framework",
+        visualType: "image",
+        isUniverse: true,
     },
     {
         id: 36,
         name: "MySQL",
-        img: "",
-        icon: IconBrandMysql
+        icon: IconBrandMysql,
+        logo: logoMysql,
+        radius: 2.1,
+        color: 0x4479a1,
+        orbitRadius: 56,
+        speed: 0.011,
+        type: "database",
+        visualType: "image",
+        isUniverse: true,
     },
     {
         id: 37,
         name: "CodeIgniter",
-        img: "",
-        icon: IconFlame
+        icon: IconFlame,
+        logo: logoCodeIgniter,
+        radius: 2.0,
+        color: 0xef4223,
+        orbitRadius: 105,
+        speed: 0.005,
+        type: "framework",
+        visualType: "image",
+        isUniverse: true,
     },
     {
         id: 38,
         name: "SQL Server",
-        img: "",
-        icon: IconSql
-    },
-    {
-        id: 39,
-        name: "REST API",
-        img: "",
-        icon: IconApi
-    },
-    {
-        id: 40,
-        name: "Deploy",
-        img: "",
-        icon: IconCloudComputing
+        icon: IconSql,
+        logo: logoSql,
+        radius: 2.1,
+        color: 0xcc2927,
+        orbitRadius: 49,
+        speed: 0.013,
+        type: "database",
+        visualType: "image",
+        isUniverse: true,
     },
     {
         id: 41,
         name: "jQuery",
-        img: "",
-        icon: IconCircleDashedLetterQ
-    },
-    {
-        id: 42,
-        name: "JWT",
-        img: "",
-        icon: IconGalaxy
+        icon: IconCircleDashedLetterQ,
+        logo: "/assets/imagenes/jquery.svg",
+        radius: 1.8,
+        color: 0x0769ad,
+        orbitRadius: 294,
+        speed: 0.0005,
+        type: "library",
+        visualType: "image",
+        isUniverse: false,
     },
     {
         id: 43,
         name: "Vite",
-        img: "",
-        icon: IconBrandVite
+        icon: IconBrandVite,
+        logo: logoVite,
+        radius: 1.95,
+        color: 0x646cff,
+        orbitRadius: 126,
+        speed: 0.0039,
+        type: "build",
+        visualType: "image",
+        isUniverse: true,
     },
-
     {
         id: 44,
         name: "Docker",
-        img: "",
-        icon: IconBrandDocker
-    },
-
-    {
-        id: 45,
-        name: "SQLite",
-        img: "",
-        icon: IconSql
-    },
-
-    {
-        id: 46,
-        name: "Firebase",
-        img: "",
-        icon: IconBrandFirebase
+        icon: IconBrandDocker,
+        logo: logoDocker,
+        radius: 2.0,
+        color: 0x2496ed,
+        orbitRadius: 112,
+        speed: 0.0046,
+        type: "devops",
+        visualType: "image",
+        isUniverse: true,
     },
     {
         id: 47,
         name: "MongoDB",
-        img: "",
-        icon: IconBrandMongodb
+        icon: IconBrandMongodb,
+        logo: logoMongoDB,
+        radius: 2.05,
+        color: 0x47a248,
+        orbitRadius: 98,
+        speed: 0.0055,
+        type: "database",
+        visualType: "image",
+        isUniverse: true,
     },
-]
-
+    {
+        id: 49,
+        name: "AWS",
+        icon: IconBrandAws,
+        logo: "/assets/imagenes/aws.svg",
+        radius: 2.0,
+        color: 0xff9900,
+        orbitRadius: 329,
+        speed: 0.00009,
+        type: "devops",
+        visualType: "image",
+        isUniverse: false,
+    },
+];
