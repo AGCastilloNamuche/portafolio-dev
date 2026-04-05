@@ -967,7 +967,7 @@ const About = () => {
             <span className="text-xs font-bold uppercase tracking-widest text-emerald-500 dark:text-emerald-400">
               {t("about.focus.eyebrow")}
             </span>
-            <h2 className="text-3xl font-bold text-zinc-900 dark:text-[#b9ffee] mt-2 leading-snug">
+            <h2 className="text-h2 font-bold text-zinc-900 dark:text-[#b9ffee] mt-2 leading-snug">
               {t("about.focus.title")}
             </h2>
           </div>
