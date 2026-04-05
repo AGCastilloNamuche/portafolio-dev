@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Editor from "@monaco-editor/react";
 import dash from "../template/dash-gc.html?raw";
 import { Panel, Group, Separator } from "react-resizable-panels";

@@ -1,11 +1,4 @@
-import React, {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
-import ForceGraph3D from "react-force-graph-3d";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { skills } from "../lib/db/skills";
 import avatar from "../assets/avatar.png";
@@ -28,6 +21,10 @@ const runConfigChecks = () => {
     Array.isArray(universeSkills) && universeSkills.length > 0,
     "datos vacios",
   );
+};
+
+type DisposableMaterial = THREE.Material & {
+  map?: THREE.Texture | null;
 };
 
 const roundReact = (
@@ -194,6 +191,8 @@ const createVisualBody = async (data: {
 };
 
 const initUniverse = async (container: HTMLDivElement) => {
+  runConfigChecks();
+
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0x020617);
   scene.fog = new THREE.Fog(0x020617, 120, 240);
@@ -275,7 +274,7 @@ const initUniverse = async (container: HTMLDivElement) => {
   const planetVisuals: THREE.Group<THREE.Object3DEventMap>[] = [];
   const planetPivots: {
     pivot: THREE.Object3D<THREE.Object3DEventMap>;
-    speed: any;
+    speed: number;
   }[] = [];
   const billboardBodies = [avatarCore];
 
@@ -384,22 +383,26 @@ const initUniverse = async (container: HTMLDivElement) => {
     controls.dispose();
 
     scene.traverse((object) => {
-      if (object.geometry) object.geometry.dispose?.();
-      if (object.material) {
-        if (Array.isArray(object.material)) {
-          object.material.forEach(
-            (material: {
-              map: { dispose: () => void };
-              dispose: () => void;
-            }) => {
-              material.map?.dispose?.();
-              material.dispose?.();
-            },
-          );
-        } else {
-          object.material.map?.dispose?.();
-          object.material.dispose?.();
-        }
+      const geometryCarrier = object as THREE.Object3D & {
+        geometry?: THREE.BufferGeometry;
+      };
+      geometryCarrier.geometry?.dispose();
+
+      const materialCarrier = object as THREE.Object3D & {
+        material?: THREE.Material | THREE.Material[];
+      };
+      const { material } = materialCarrier;
+
+      const disposeMaterial = (entry: THREE.Material) => {
+        const textureMaterial = entry as DisposableMaterial;
+        textureMaterial.map?.dispose?.();
+        textureMaterial.dispose();
+      };
+
+      if (Array.isArray(material)) {
+        material.forEach(disposeMaterial);
+      } else if (material) {
+        disposeMaterial(material);
       }
     });
 
@@ -411,15 +414,16 @@ const initUniverse = async (container: HTMLDivElement) => {
 };
 
 const UniversoHabilidades = () => {
-  const mountRef = useRef(null);
+  const mountRef = useRef<HTMLDivElement | null>(null);
   const [showIntro, setShowIntro] = useState(true);
   const [status, setStatus] = useState("loading");
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (!mountRef.current) return undefined;
+    const mountNode = mountRef.current;
+    if (!mountNode) return undefined;
 
-    let cleanup = null;
+    let cleanup: (() => void) | null = null;
     let cancelled = false;
 
     const introTimer = window.setTimeout(() => {
@@ -428,7 +432,7 @@ const UniversoHabilidades = () => {
 
     (async () => {
       try {
-        cleanup = await initUniverse(mountRef.current);
+        cleanup = await initUniverse(mountNode);
         if (!cancelled) {
           setStatus("ready");
         }

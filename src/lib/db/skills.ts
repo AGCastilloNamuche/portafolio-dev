@@ -1,4 +1,4 @@
-import { IconApi, IconBrandAdobeIllustrator, IconBrandAdobeIndesign, IconBrandAdobePhotoshop, IconBrandAdobeXd, IconBrandAws, IconBrandCss3, IconBrandDeviantart, IconBrandDjango, IconBrandDocker, IconBrandFigma, IconBrandFirebase, IconBrandFlutter, IconBrandFramer, IconBrandGit, IconBrandGithub, IconBrandGitlab, IconBrandHtml5, IconBrandJavascript, IconBrandLaravel, IconBrandMongodb, IconBrandMysql, IconBrandNodejs, IconBrandPhp, IconBrandPython, IconBrandQq, IconBrandReact, IconBrandSafari, IconBrandTailwind, IconBrandTrello, IconBrandTypescript, IconBrandVite, IconBrandVue, IconCircleDashedLetterG, IconCircleDashedLetterP, IconCircleDashedLetterQ, IconCircleDashedLetterR, IconCircleDottedLetterA, IconCircleDottedLetterC, IconCircleDottedLetterD, IconCircleDottedLetterG, IconCircleDottedLetterR, IconCloudComputing, IconCurrencyIranianRial, IconFlame, IconGalaxy, IconPackageExport, IconSql, IconWorldPin } from '@tabler/icons-react'
+import { IconBrandAdobeIllustrator, IconBrandAdobeIndesign, IconBrandAdobePhotoshop, IconBrandAdobeXd, IconBrandAws, IconBrandCss3, IconBrandDjango, IconBrandDocker, IconBrandFigma, IconBrandFlutter, IconBrandFramer, IconBrandGit, IconBrandGithub, IconBrandGitlab, IconBrandHtml5, IconBrandJavascript, IconBrandLaravel, IconBrandMongodb, IconBrandMysql, IconBrandNodejs, IconBrandPhp, IconBrandPython, IconBrandQq, IconBrandReact, IconBrandSafari, IconBrandTailwind, IconBrandTrello, IconBrandTypescript, IconBrandVite, IconBrandVue, IconCircleDashedLetterP, IconCircleDashedLetterQ, IconCircleDashedLetterR, IconCircleDottedLetterA, IconCircleDottedLetterC, IconCircleDottedLetterD, IconCircleDottedLetterG, IconCurrencyIranianRial, IconFlame, IconPackageExport, IconSql, IconWorldPin } from '@tabler/icons-react'
 import logoJs from "../../assets/javascript.svg"
 import logoReact from "../../assets/react.svg"
 import logoTypeScript from "../../assets/typescript.svg"
@@ -22,8 +22,6 @@ import logoNode from "../../assets/nodedotjs.svg"
 import logoGit from "../../assets/git.svg"
 import logoGithub from "../../assets/Github.svg"
 import logoArcgis from "../../assets/icon-64.svg"
-import logoSqlite from "../../assets/sqlite.svg"
-import logoPostgis from "../../assets/postgis.png"
 import logoJira from "../../assets/jira.svg"
 import logoFigma from "../../assets/Figma.svg"
 import logoMapbox from "../../assets/Mapbox.svg"
