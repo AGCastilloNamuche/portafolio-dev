@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export type TabsVariant = "underline" | "pills" | "boxed";
 
@@ -70,6 +71,7 @@ export function Tabs<TId extends string = string>({
   panelClassName,
   fullWidth = true,
 }: TabsProps<TId>) {
+  const { t } = useTranslation();
   const firstEnabled = useMemo(() => tabs.find((t) => !t.disabled)?.id, [tabs]);
   const isControlled = value !== undefined;
 
@@ -118,7 +120,7 @@ export function Tabs<TId extends string = string>({
         <div className={variant === "pills" ? "col-2" : ""}>
           <div
             role="tablist"
-            aria-label="Tabs"
+            aria-label={t("accessibility.tabs")}
             className={cx(
               fullWidth ? "flex w-full" : "inline-flex",
               tabListClassName,

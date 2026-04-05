@@ -1,0 +1,341 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于我",
+    "projects": "项目",
+    "blog": "博客",
+    "contact": "联系我"
+  },
+  "languageSelector": {
+    "aria": "选择语言"
+  },
+  "accessibility": {
+    "tabs": "标签页",
+    "breadcrumb": "面包屑导航"
+  },
+  "footer": {
+    "description": "我为 Web 与移动端设计并开发数字产品，兼顾创意、性能与用户体验。",
+    "quickLinks": "快捷链接",
+    "contact": "联系",
+    "letsTalk": "聊一聊",
+    "whatsapp": "WhatsApp",
+    "email": "邮箱",
+    "social": "社交媒体",
+    "copyright": "© {{year}} ACN。保留所有权利。"
+  },
+  "formats": {
+    "longDate": "YYYY年M月D日",
+    "monthYear": "YYYY MMM"
+  },
+  "categories": {
+    "web-development": "Web 开发",
+    "mobile-development": "移动开发",
+    "data-analysis": "数据分析"
+  },
+  "common": {
+    "all": "全部",
+    "today": "今天",
+    "present": "至今",
+    "cancel": "取消",
+    "support": "支持",
+    "close": "关闭",
+    "information": "信息"
+  },
+  "home": {
+    "available": "接受新挑战",
+    "greeting": "你好。我是",
+    "name": "Gian Pierre",
+    "subtitle": "系统工程师与全栈开发人员（网页与移动端）。热衷于打造具有吸引力、无障碍且以用户为中心的体验。",
+    "bento": {
+      "exp_sub": "职业轨迹",
+      "exp_title": "我的经验",
+      "proj_sub": "我的作品集",
+      "proj_title": "我的项目",
+      "tools_sub": "工具",
+      "tools_title": "设计与开发",
+      "blog_sub": "博客",
+      "blog_title": "文章汇编"
+    },
+    "workflow": {
+      "title": "工作流",
+      "subtitle": "全栈开发者。我打造具有吸引力、无障碍且以用户为中心的体验。充满创造热情，对细节一丝不苟。",
+      "plan": {
+        "title": "规划",
+        "sub": "用户需求",
+        "desc": "通过简短访谈与调研统一目标与范围，定义需求与成功标准。"
+      },
+      "design": {
+        "title": "设计",
+        "sub": "UI/UX 与架构",
+        "desc": "在编写代码之前，我将需求转化为清晰的界面与坚实的架构。"
+      },
+      "dev": {
+        "title": "开发",
+        "sub": "全栈核心",
+        "desc": "端到端构建：前端、API、数据库和持续集成与交付。"
+      },
+      "qa": {
+        "title": "测试",
+        "sub": "QA 与验证",
+        "desc": "我测试质量、性能和安全性，并在真实场景中修复各类漏洞。"
+      },
+      "delivery": {
+        "title": "交付",
+        "sub": "发布与支持",
+        "desc": "软件自动化部署，提供核心文档以及基于持续反馈的更新支持。"
+      },
+      "iteration": {
+        "title": "迭代",
+        "sub": "原型与 MVP",
+        "desc": "快速制作原型并构建 MVP，以验证业务假设并优先考虑实际影响。"
+      }
+    },
+    "colab": {
+      "title": "合作伙伴",
+      "subtitle": "我曾与众多杰出的公司合作，共同打造稳健的数字解决方案。"
+    }
+  },
+  "about": {
+    "roleTitle": "我是 Web 与移动端全栈开发者",
+    "intro1": "过去 5 年里，我一直从事软件开发工作，专注于构建以用户为中心的界面与数字体验。在这段时间里，我参与设计并交付了兼顾视觉清晰度、可用性、无障碍和业务目标的产品。",
+    "intro2": "目前我在农业领域的一家公司担任软件开发工程师，参与面向信息管理与分析的技术解决方案开发。在这个岗位上，我不断探索并应用新技术，以优化流程并通过数字工具创造价值，同时兼顾业务影响和使用体验。",
+    "stats": {
+      "projects": "已完成项目",
+      "experience": "年开发经验",
+      "clients": "满意客户",
+      "deliveries": "按时交付"
+    },
+    "stack": {
+      "eyebrow": "我的成长路径",
+      "title": "我用于构建 Web 与移动产品的核心技术栈。",
+      "frontend": "前端",
+      "backend": "后端",
+      "mobile": "移动端",
+      "database": "数据库",
+      "coreTitle": "核心技术栈（日常使用）",
+      "coreDesc": "我构建端到端 Web 产品的基础工具集。",
+      "extraTitle": "移动端与扩展经验",
+      "extraDesc": "我也使用",
+      "dataTitle": "数据与云（NoSQL）",
+      "dataDesc": "数据与服务"
+    },
+    "messenger": {
+      "title": "一切都从一个想法开始",
+      "allMessages": "全部消息",
+      "openChat": "开放会话",
+      "inProgress": "进行中",
+      "closed": "已关闭",
+      "searchPlaceholder": "按联系人搜索",
+      "chatCount": "聊天（{{count}}）",
+      "emailCount": "邮件（{{count}}）",
+      "inboxCount": "收件箱（{{count}}）",
+      "lastSeen": "今天最后在线时间 12:19 PM",
+      "replyPlaceholder": "回复消息",
+      "infoTitle": "信息",
+      "aboutClient": "关于客户",
+      "visits": "访问 {{count}} 次",
+      "phoneLabel": "电话号码",
+      "emailLabel": "电子邮箱",
+      "dateLabel": "日期",
+      "timeLabel": "时间",
+      "channelLabel": "渠道",
+      "channelValue": "Web / Mobile",
+      "browserLabel": "浏览器",
+      "agentAsk": "当然可以！先跟我说说：你希望这些代理做什么？这个项目属于哪个业务场景？",
+      "clientNeed": "它主要用于自动化支持流程，也希望帮助我的团队处理重复任务，比如摘要、回复和工单跟进。",
+      "agentClarify": "很好。为了快速落地：",
+      "agentClarify1": "这些代理只是对话，还是也需要执行操作，比如创建工单、发送邮件或查询数据库？",
+      "agentClarify2": "你们现在用的是什么技术栈（Node/TS、Python 等）？",
+      "clientStack": "它们需要执行操作。技术栈是 Node + TypeScript。我们的信息分布在 PDF 和数据库里。",
+      "agentProposal": "明白了。我建议采用一个简单且可扩展的架构：",
+      "agentProposal1": "编排代理：决定该做什么以及委派给谁。",
+      "agentProposal2": "知识代理（RAG）：在 PDF 或文档中检索内容，并返回带依据的引用。",
+      "agentProposal3": "动作代理：执行创建/更新工单、查询数据库等函数。",
+      "agentProposal4": "安全护栏：防止敏感数据泄露并校验输入。",
+      "clientFlow": "这个方案不错。那流程该怎么定义？"
+    },
+    "contacts": {
+      "1": "你好，我正在搭建一个内部支持聊天机器人。你能帮我设计架构和数据流吗？",
+      "2": "你好，我需要 Docker 和 docker-compose 的帮助来启动整个项目。",
+      "3": "你好，我需要一个与 AI 代理相关项目的帮助。",
+      "4": "你好，我想在系统里实现角色与权限（RBAC），应该怎么设计？",
+      "5": "你好，我在接入支付时 webhook 出问题了，你能帮我排查吗？"
+    },
+    "focus": {
+      "eyebrow": "我的方法",
+      "title": "专注质量、性能与结果的 Web 和移动解决方案",
+      "description": "我以端到端的方式打造数字产品，关注架构、性能与用户体验。我的重点是构建可维护、可扩展、能够解决真实问题并从首个版本就创造价值的方案。",
+      "visionTitle": "愿景",
+      "visionBody": "成为一名因构建可扩展、安全且设计良好的 Web 与移动解决方案而被认可的全栈开发者，为个人与企业创造真实价值。",
+      "missionTitle": "使命",
+      "missionBody": "根据项目需要，使用 React、Vue、Angular、Flutter、Django、Laravel、Node.js 等现代技术与最佳实践，从前端到后端设计并开发端到端数字产品，同时重视性能、可维护性与用户体验。",
+      "approachTitle": "方法",
+      "approach1": "务实的全栈思维：我构建清晰的界面和稳固的后端，将产品与技术连接起来。",
+      "approach2": "质量与可扩展性：干净的代码、可维护的架构、合理设计的 API 与稳定性能。",
+      "approach3": "为问题选择合适的技术：PHP/Laravel、Python/Django、Node.js、Java、JavaScript，以及 React/Vue/Angular + Tailwind，移动端则使用 Flutter/Dart。",
+      "approach4": "交付与持续改进：快速迭代、清晰沟通、专注结果。"
+    }
+  },
+  "projectsPage": {
+    "title": "项目",
+    "subtitle": "这些真实作品展示了我如何把想法转化为可投入生产的 Web 与移动产品。"
+  },
+  "projectDetail": {
+    "breadcrumb": "项目",
+    "infoTitle": "项目信息",
+    "categoryLabel": "分类",
+    "clientLabel": "客户",
+    "dateLabel": "日期",
+    "roleLabel": "角色",
+    "urlLabel": "链接",
+    "techTitle": "使用技术",
+    "frontendLabel": "前端",
+    "backendLabel": "后端",
+    "databaseLabel": "数据库",
+    "infrastructureLabel": "基础设施",
+    "galleryPrefix": "项目",
+    "gallerySuffix": "画廊",
+    "closeExpandedView": "关闭放大视图",
+    "expandedViewAlt": "放大视图",
+    "viewImage": "查看图片 {{index}}",
+    "thumbnailAlt": "缩略图 {{index}}",
+    "screenshotAlt": "{{title}} 的截图 {{index}}",
+    "originalContentNotice": "该项目的详细说明目前仍以西班牙语显示。"
+  },
+  "blog": {
+    "title": "博客与文章",
+    "subtitle": "关于开发、软件架构等主题的思考、教程与笔记。"
+  },
+  "blogDetail": {
+    "notFound": "未找到文章",
+    "breadcrumb": "博客",
+    "detailsTitle": "文章详情",
+    "categoryLabel": "分类",
+    "authorLabel": "作者",
+    "publishedLabel": "发布时间",
+    "originalContentNotice": "这篇文章的完整正文目前仍以西班牙语显示。"
+  },
+  "login": {
+    "title": "登录",
+    "subtitle": "登录模块仍在准备中。"
+  },
+  "articles": {
+    "1": {
+      "title": "使用 useMemo 和 useCallback 优化 React",
+      "description": "一份完整指南，帮助你通过避免深层组件树中的不必要重渲染来提升 React 应用性能。"
+    },
+    "2": {
+      "title": "面向领域的 Node.js 清晰架构",
+      "description": "了解如何通过清晰分离控制器与仓储层来构建健壮、模块化且可扩展的后端项目。"
+    },
+    "3": {
+      "title": "PostGIS 的力量：高级地理空间分析",
+      "description": "PostGIS 不只是另一个数据库，它是一整套可以直接在 PostgreSQL 代码层解决卫星与空间问题的能力集合。"
+    },
+    "4": {
+      "title": "React 全局状态管理：Zustand vs Redux Toolkit",
+      "description": "深入看看现代 React 状态管理生态。到了今天，Redux 还是绝对必要的吗？"
+    },
+    "5": {
+      "title": "使用 React Native 与 Expo Flexbox 构建原生移动界面",
+      "description": "不学习 Swift 或 Kotlin，能否做出真正具有原生感的界面？带你快速了解当下的 Expo 与 React Native 生态。"
+    },
+    "6": {
+      "title": "AI 与智能代理正在重塑软件开发",
+      "description": "大型语言模型与自治 AI 代理正如何显著改变软件开发的日常工作流。"
+    },
+    "7": {
+      "title": "用 Vue、Python 和 GDAL 分析卫星图像",
+      "description": "学习如何在后端使用 GDAL 与 Python 处理卫星图像，计算 NDVI、GCI、NDMI 等指标，并用 Vue 进行可视化展示。"
+    }
+  },
+  "tools": {
+    "title": "开发",
+    "subtitle": "通过一段交互式旅程，了解我如何使用工具与语言生态，把复杂想法变成高性能数字产品。",
+    "editorTitle": "试试我的",
+    "editorHighlight": "实时 HTML/CSS 编辑器",
+    "editorDescription": "修改代码并立即查看结果",
+    "stackTitle": "我的技能",
+    "stackHighlight": "技术栈",
+    "stackDescription": "沉浸式探索构成我专业核心的技术与语言，看看每个工具如何在我的工作流中协作，支撑高性能数字方案的落地。"
+  },
+  "skill": {
+    "title": "经验",
+    "typeLabel": "类型",
+    "scheduleLabel": "时间线",
+    "companiesLabel": "公司",
+    "workType": "工作经历",
+    "present": "至今",
+    "items": {
+      "1": {
+        "title": "程序分析师（GIS 全栈）",
+        "description": "我设计并开发用于分析、自动化和空间信息可视化的 Web 与移动地理空间解决方案。我实现了气象与卫星数据的采集和处理流程，提升了分析所需数据的质量与可用性。我构建了支持运营与技术决策的仪表盘和交互式地图。同时，我还集成了 AI 代理来加速开发与部署，并实现了用于气象处理和降雨预测的机器学习模型。"
+      },
+      "2": {
+        "title": "Web 开发工程师（自由职业 - 文档管理与访问控制）",
+        "description": "我开发了文件管理和用户管理模块，并通过角色与权限实现安全访问控制。我还构建了一个现代且一致的界面，注重可用性，为运营团队提供了稳健且友好的使用体验。"
+      },
+      "3": {
+        "title": "Web UI 与业务模块开发工程师（自由职业 / 合同）",
+        "description": "我构建了一个快递配送控制系统的 UI 和关键模块，帮助加快资金接收、资金管理与配送物流。我实现了订单申请、包裹调拨、集中资源管理以及实时路线和交付监控等功能，并开发了汇率、分级访问控制、角色与权限相关模块。"
+      },
+      "4": {
+        "title": "编程助理",
+        "description": "我根据用户需求协助开发和验证 Web 系统，持续跟进进行中的项目，并验证问题与报告案例，以确保稳定性和质量。我还指导团队正确使用已实施的工具，并参与 Web 应用、REST API 和部署流程的实施。"
+      },
+      "5": {
+        "title": "全栈 Web 开发工程师（自由职业）",
+        "description": "我开发了一套兽医预约管理系统，为兽医提供通知并管理每只宠物的病历。我还实现了一个客户门户，用于查询和下载病历、处方和药物信息，从而提升服务质量与治疗连续性，并完成了 AWS 上的完整部署以保障生产环境可用。"
+      },
+      "6": {
+        "title": "Web 开发工程师",
+        "description": "我根据用户需求协助开发和验证 Web 系统，持续跟进进行中的项目，并验证问题与报告案例，以确保稳定性和质量。我还指导团队正确使用已实施的工具，并参与 Web 应用、REST API 和部署流程的实施。"
+      }
+    }
+  },
+  "chatbot": {
+    "initialMessage": "你好！我是 Gianpierre。今天我可以怎么帮助你？",
+    "greetingMorning": "早上好，",
+    "greetingAfternoon": "下午好，",
+    "greetingEvening": "晚上好，",
+    "guest": "访客",
+    "aiName": "Gian Pierre AI",
+    "online": "在线",
+    "homeTitle": "需要点什么？",
+    "homeSubtitle": "我们的智能 AI 助手可以更快、更轻松地帮你找到真正需要的内容。",
+    "options": {
+      "contact": "📞 我想联系你",
+      "browse": "👀 先随便看看"
+    },
+    "messages": {
+      "alreadyReceived": "我们已经收到你的留言，会尽快联系你。😊",
+      "contactStart1": "很好的选择！⚡️",
+      "contactStart2": "我已经准备好帮助你了。现在就给我留言，我们马上开始！🤝",
+      "contactStart3": "请留下你的电话或邮箱，方便我们直接联系你。",
+      "browse1": "没问题！请随意浏览，慢慢看看。🙌",
+      "browse2": "希望你会喜欢我的项目。如果你有任何问题，或者想深入了解某个点，我都会在这里帮助你！😊",
+      "browse3": "你想先看什么？",
+      "initialPrompt": "明白了！为了更准确地帮助你，请先选择下面的一个选项：",
+      "invalidContact": "请确认你填写了邮箱地址或电话号码，这样我才能联系到你。😅",
+      "received1": "已收到！非常感谢你提供的信息。🙌",
+      "received2": "我们很快会联系你，继续推进下一步。祝你今天愉快！✨",
+      "genericThanks": "感谢你的留言！我会尽快查看。"
+    },
+    "quickLinks": {
+      "projects": "📂 查看项目（作品集）",
+      "tech": "🛠️ 我使用的技术",
+      "agrotech": "📈 我的 Agrotech 经验",
+      "talk": "💬 聊一聊！"
+    },
+    "inputPlaceholder": "输入你的消息..."
+  },
+  "errorPage": {
+    "unexpectedTitle": "未知错误",
+    "unexpectedSubtitle": "出现了一个问题。",
+    "notFoundTitle": "404",
+    "notFoundSubtitle": "哎呀，页面未找到",
+    "notFoundDetails": "抱歉，我们找不到你正在寻找的页面。",
+    "genericSubtitle": "发生了错误",
+    "backHome": "返回首页"
+  }
+}

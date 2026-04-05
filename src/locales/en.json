@@ -1,0 +1,341 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "languageSelector": {
+    "aria": "Select language"
+  },
+  "accessibility": {
+    "tabs": "Tabs",
+    "breadcrumb": "Breadcrumb"
+  },
+  "footer": {
+    "description": "I design and build digital products for web and mobile, blending creativity, performance, and user experience.",
+    "quickLinks": "Quick links",
+    "contact": "Contact",
+    "letsTalk": "Let's talk",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "social": "Social media",
+    "copyright": "© {{year}} ACN. All rights reserved."
+  },
+  "formats": {
+    "longDate": "MMMM D, YYYY",
+    "monthYear": "MMM YYYY"
+  },
+  "categories": {
+    "web-development": "Web Development",
+    "mobile-development": "Mobile Development",
+    "data-analysis": "Data Analysis"
+  },
+  "common": {
+    "all": "All",
+    "today": "Today",
+    "present": "Present",
+    "cancel": "Cancel",
+    "support": "Support",
+    "close": "Close",
+    "information": "Information"
+  },
+  "home": {
+    "available": "Available for new adventures",
+    "greeting": "Hi. I'm",
+    "name": "Gian Pierre",
+    "subtitle": "Systems Engineer and Full Stack Developer (Web & Mobile). Passionate about creating engaging, accessible, and user-centered experiences.",
+    "bento": {
+      "exp_sub": "Career Path",
+      "exp_title": "My Experience",
+      "proj_sub": "My Portfolio",
+      "proj_title": "My Projects",
+      "tools_sub": "Tools",
+      "tools_title": "Design and Build",
+      "blog_sub": "Blog",
+      "blog_title": "Articles"
+    },
+    "workflow": {
+      "title": "Workflow",
+      "subtitle": "Full-stack developer. I build engaging, accessible, and user-centric experiences. Passionate about creativity and a meticulous eye for detail.",
+      "plan": {
+        "title": "Planning",
+        "sub": "User Requirements",
+        "desc": "Aligning goals and scope through brief interviews and research to define requirements and success criteria."
+      },
+      "design": {
+        "title": "Design",
+        "sub": "UI/UX & ARCHITECTURE",
+        "desc": "I transform requirements into clear interfaces and a solid architecture before writing code."
+      },
+      "dev": {
+        "title": "Development",
+        "sub": "FULL-STACK CORE",
+        "desc": "End-to-end building: front-end, APIs, databases, and continuous integrations."
+      },
+      "qa": {
+        "title": "Testing",
+        "sub": "QA & VALIDATION",
+        "desc": "I test quality, performance, and security, fixing bugs in real-world scenarios."
+      },
+      "delivery": {
+        "title": "Delivery",
+        "sub": "LAUNCH & SUPPORT",
+        "desc": "Software deployment, essential documentation delivery, and continuous feedback loop support."
+      },
+      "iteration": {
+        "title": "Iteration",
+        "sub": "PROTOTYPING & MVP",
+        "desc": "Rapid prototyping and MVP building to quickly validate assumptions and prioritize impact."
+      }
+    },
+    "colab": {
+      "title": "Collaborations",
+      "subtitle": "I've worked with incredible companies, forging robust digital solutions."
+    }
+  },
+  "about": {
+    "roleTitle": "I'm a Full Stack Web & Mobile Developer",
+    "intro1": "Over the last 5 years, I have worked as a software developer focused on building user-centered interfaces and digital experiences. During that time, I have designed and delivered products that balance visual clarity, usability, accessibility, and business goals.",
+    "intro2": "I currently work as a software developer in the agricultural sector, contributing to technology solutions for information management and analysis. In this role, I explore and apply new technologies to optimize processes and deliver value through digital tools, always considering both operational impact and user experience.",
+    "stats": {
+      "projects": "Completed projects",
+      "experience": "Years of experience",
+      "clients": "Satisfied clients",
+      "deliveries": "On-time deliveries"
+    },
+    "stack": {
+      "eyebrow": "My personal growth",
+      "title": "Main stack I use to build web and mobile products.",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "mobile": "Mobile",
+      "database": "Database",
+      "coreTitle": "Core stack (daily use)",
+      "coreDesc": "My base toolkit for building end-to-end web products.",
+      "extraTitle": "Mobile & additional experience",
+      "extraDesc": "I also work with",
+      "dataTitle": "Data & Cloud (NoSQL)",
+      "dataDesc": "Data and services"
+    },
+    "messenger": {
+      "title": "Everything starts with an idea",
+      "allMessages": "All messages",
+      "openChat": "Open chat",
+      "inProgress": "In progress",
+      "closed": "Closed",
+      "searchPlaceholder": "Search by contact",
+      "chatCount": "Chat ({{count}})",
+      "emailCount": "Email ({{count}})",
+      "inboxCount": "Inbox ({{count}})",
+      "lastSeen": "last seen today at 12:19 PM",
+      "replyPlaceholder": "Reply to message",
+      "infoTitle": "Information",
+      "aboutClient": "About the client",
+      "visits": "{{count}} visits",
+      "phoneLabel": "Phone number",
+      "emailLabel": "Email",
+      "dateLabel": "Date",
+      "timeLabel": "Time",
+      "channelLabel": "Channel",
+      "channelValue": "Web / Mobile",
+      "browserLabel": "Browser",
+      "agentAsk": "Of course! Tell me a bit more: what do you want the agents to do, and what area is the project for?",
+      "clientNeed": "It's for automating support and also helping my team with repetitive tasks like summaries, replies, and ticket follow-up.",
+      "agentClarify": "Perfect. To land it quickly:",
+      "agentClarify1": "Should the agents only chat, or do they also need to execute actions like creating tickets, sending emails, or querying the DB?",
+      "agentClarify2": "What stack are you using (Node/TS, Python, etc.)?",
+      "clientStack": "They need to execute actions. Stack: Node + TypeScript. We have information in PDFs and in a database.",
+      "agentProposal": "Great. I suggest a simple and scalable architecture:",
+      "agentProposal1": "Orchestrator Agent: decides what to do and who should handle it.",
+      "agentProposal2": "Knowledge Agent (RAG): searches PDFs and documents in a vector DB and returns grounded citations.",
+      "agentProposal3": "Action Agent: runs functions such as creating or updating tickets, querying the DB, and more.",
+      "agentProposal4": "Guardrails: security rules to avoid leaking sensitive data and to validate inputs.",
+      "clientFlow": "I like it. How do we define the flow?"
+    },
+    "contacts": {
+      "1": "Hi, I'm building an internal support chatbot. Can you help me with the architecture and data flow?",
+      "2": "Hi, I need help with Docker and docker-compose to boot my full project.",
+      "3": "Hi, I need help with a project involving AI agents.",
+      "4": "Hi, I want to implement roles and permissions (RBAC) in my system. How should I structure it?",
+      "5": "Hi, I'm integrating payments and the webhook is failing. Can you help me debug it?"
+    },
+    "focus": {
+      "eyebrow": "My approach",
+      "title": "Web and mobile solutions built with focus, quality, and performance",
+      "description": "I build end-to-end digital products with close attention to architecture, performance, and user experience. My focus is on delivering maintainable and scalable solutions that solve real problems and bring value from the first release.",
+      "visionTitle": "Vision",
+      "visionBody": "To be recognized as a full-stack developer who creates scalable, secure, and well-crafted web and mobile solutions that bring real value to people and businesses.",
+      "missionTitle": "Mission",
+      "missionBody": "To design and build end-to-end digital products, from frontend to backend, with a strong focus on performance, maintainability, and user experience, using best practices and modern technologies such as React, Vue, Angular, Flutter, Django, Laravel, and Node.js depending on the project's needs.",
+      "approachTitle": "Approach",
+      "approach1": "Practical full-stack mindset: I build clear interfaces and solid backend foundations, connecting product and technology.",
+      "approach2": "Quality and scalability: clean code, maintainable architecture, thoughtful APIs, and strong performance.",
+      "approach3": "Right technology for the problem: PHP/Laravel, Python/Django, Node.js, Java, JavaScript, plus React/Vue/Angular with Tailwind and Flutter/Dart for apps.",
+      "approach4": "Delivery and continuous improvement: fast iteration, clear communication, and results-first execution."
+    }
+  },
+  "projectsPage": {
+    "title": "Projects",
+    "subtitle": "Real work that shows how I turn ideas into production-ready web and mobile products."
+  },
+  "projectDetail": {
+    "breadcrumb": "Projects",
+    "infoTitle": "Project information",
+    "categoryLabel": "Category",
+    "clientLabel": "Client",
+    "dateLabel": "Date",
+    "roleLabel": "Role",
+    "urlLabel": "URL",
+    "techTitle": "Technologies used",
+    "frontendLabel": "Frontend",
+    "backendLabel": "Backend",
+    "databaseLabel": "Database",
+    "infrastructureLabel": "Infrastructure",
+    "galleryPrefix": "Project",
+    "gallerySuffix": "gallery",
+    "closeExpandedView": "Close enlarged view",
+    "expandedViewAlt": "Enlarged view",
+    "viewImage": "View image {{index}}",
+    "thumbnailAlt": "Thumbnail {{index}}",
+    "screenshotAlt": "Screenshot {{index}} of {{title}}",
+    "originalContentNotice": "The detailed project write-up is still shown in Spanish."
+  },
+  "blog": {
+    "title": "Blog & articles",
+    "subtitle": "Thoughts, tutorials, and notes on development, software architecture, and more."
+  },
+  "blogDetail": {
+    "notFound": "Article not found",
+    "breadcrumb": "Blog",
+    "detailsTitle": "Article details",
+    "categoryLabel": "Category",
+    "authorLabel": "Author",
+    "publishedLabel": "Published",
+    "originalContentNotice": "The full body of this article is still shown in Spanish."
+  },
+  "login": {
+    "title": "Login",
+    "subtitle": "The access module is still being prepared."
+  },
+  "articles": {
+    "1": {
+      "title": "Optimizing React with useMemo and useCallback",
+      "description": "A complete guide to improving the performance of your React apps by avoiding unnecessary re-renders in deeply nested component trees."
+    },
+    "2": {
+      "title": "Clean domain-oriented architecture in Node.js",
+      "description": "Learn how to structure robust, modular, and scalable backend projects by clearly separating controllers and repositories."
+    },
+    "3": {
+      "title": "The power of PostGIS: advanced geospatial analysis",
+      "description": "PostGIS is not just another database; it is a full suite capable of solving satellite and spatial problems directly from your PostgreSQL codebase."
+    },
+    "4": {
+      "title": "Global state management in React: Zustand vs Redux Toolkit",
+      "description": "A closer look at the modern React state management ecosystem. Is Redux still strictly necessary today?"
+    },
+    "5": {
+      "title": "Native mobile interfaces with React Native and Expo Flexbox",
+      "description": "Can you build interfaces that truly feel native without learning Swift or Kotlin? A guided dive into the current Expo and React Native ecosystem."
+    },
+    "6": {
+      "title": "The AI and agents revolution in software development",
+      "description": "How large language models and autonomous AI agents are dramatically transforming the day-to-day software development workflow."
+    },
+    "7": {
+      "title": "Analyzing satellite imagery with Vue, Python, and GDAL",
+      "description": "Learn how to process satellite imagery on the backend to compute indexes like NDVI, GCI, and NDMI using GDAL and Python, then visualize them with Vue."
+    }
+  },
+  "tools": {
+    "title": "Development",
+    "subtitle": "An interactive journey through the ecosystem of tools and languages I use to turn complex ideas into high-performance digital products.",
+    "editorTitle": "Try my",
+    "editorHighlight": "live HTML/CSS editor",
+    "editorDescription": "Edit the code and see the result instantly",
+    "stackTitle": "My skill",
+    "stackHighlight": "stack",
+    "stackDescription": "Explore the technologies and languages that shape my professional core in an immersive way. See how each tool orbits and interacts inside my workflow to build high-performance digital solutions."
+  },
+  "skill": {
+    "title": "Experience",
+    "typeLabel": "Type",
+    "scheduleLabel": "Timeline",
+    "companiesLabel": "Companies",
+    "workType": "Work",
+    "present": "Present",
+    "items": {
+      "1": {
+        "title": "Programmer Analyst (GIS Full-Stack)",
+        "description": "I design and build web and mobile geospatial solutions for analysis, automation, and territorial data visualization. I implemented ingestion and processing flows for weather and satellite data, improving data quality and availability for analytics. I built dashboards and interactive maps to support operational and technical decision-making. I also integrated AI agents to accelerate development and deployment through DevOps practices, and implemented machine learning models for weather processing and rainfall prediction."
+      },
+      "2": {
+        "title": "Web Developer (Freelance - Document Management & Access Control)",
+        "description": "I developed modules for file management and user administration, implementing roles and permissions for secure access control. I also built a modern and consistent interface focused on usability, with a robust and friendly design for the operations team."
+      },
+      "3": {
+        "title": "UI Web Developer & Business Modules (Freelance / Contract)",
+        "description": "I built the UI and key modules for an express delivery control system designed to accelerate cash reception, fund handling, and distribution logistics. I implemented features for order requests, package transfer tracking, and centralized resource management with real-time route and delivery monitoring. I also developed currency exchange, multi-level access control, roles, and permissions modules."
+      },
+      "4": {
+        "title": "Programming Assistant",
+        "description": "I supported the development and verification of web systems based on user requirements, following ongoing projects closely and validating incidents and reported cases to ensure stability and quality. I guided the team on proper use of the implemented tools and participated in web app implementation, REST API creation, and deployment processes."
+      },
+      "5": {
+        "title": "Full-stack Web Developer (Freelance)",
+        "description": "I developed a web system for veterinary appointment management, including notifications for the veterinarian and administration of each pet's medical history. I also implemented a client portal to view and download records, prescriptions, and medications, improving care continuity. I handled the full AWS deployment to ensure production availability and operation."
+      },
+      "6": {
+        "title": "Web Developer",
+        "description": "I supported the development and verification of web systems based on user requirements, following ongoing projects closely and validating incidents and reported cases to ensure stability and quality. I guided the team on proper use of the implemented tools and participated in web app implementation, REST API creation, and deployment processes."
+      }
+    }
+  },
+  "chatbot": {
+    "initialMessage": "Hi! I'm Gianpierre. How can I help you today?",
+    "greetingMorning": "Good morning,",
+    "greetingAfternoon": "Good afternoon,",
+    "greetingEvening": "Good evening,",
+    "guest": "Guest",
+    "aiName": "Gian Pierre AI",
+    "online": "Online",
+    "homeTitle": "Need something?",
+    "homeSubtitle": "Our smart AI assistant helps you find exactly what you need, faster and more easily than ever.",
+    "options": {
+      "contact": "📞 I'd like to get in touch",
+      "browse": "👀 Just looking around"
+    },
+    "messages": {
+      "alreadyReceived": "We already have a message at reception and we'll reach out as soon as possible. 😊",
+      "contactStart1": "Excellent choice! ⚡️",
+      "contactStart2": "I'm ready to help with whatever you need. Send me a message now and let's get started! 🤝",
+      "contactStart3": "Please leave your phone number or email so we can stay in direct contact.",
+      "browse1": "No problem! Make yourself comfortable and take a look around. 🙌",
+      "browse2": "I hope you enjoy checking out my projects. If any questions come up or you want to go deeper into something, I'll be here to help! 😊",
+      "browse3": "What would you like to see first?",
+      "initialPrompt": "Got it! To help you with exactly what you're looking for, pick one of these options:",
+      "invalidContact": "Please make sure to enter your email address or phone number so I can contact you. 😅",
+      "received1": "Received! Thanks a lot for the information. 🙌",
+      "received2": "We'll be in touch very soon to keep moving forward. Have a great day! ✨",
+      "genericThanks": "Thanks for reaching out! I'll review it soon."
+    },
+    "quickLinks": {
+      "projects": "📂 View projects (portfolio)",
+      "tech": "🛠️ Technologies I use",
+      "agrotech": "📈 My Agrotech experience",
+      "talk": "💬 Let's talk!"
+    },
+    "inputPlaceholder": "Write your message..."
+  },
+  "errorPage": {
+    "unexpectedTitle": "Unexpected error",
+    "unexpectedSubtitle": "Something went wrong.",
+    "notFoundTitle": "404",
+    "notFoundSubtitle": "Oops! Page not found",
+    "notFoundDetails": "Sorry, we can't find the page you're looking for.",
+    "genericSubtitle": "An error occurred",
+    "backHome": "Back to home"
+  }
+}

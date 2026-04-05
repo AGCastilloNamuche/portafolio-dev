@@ -1,36 +1,38 @@
 
+export type NavKey = "home" | "about" | "projects" | "blog" | "contact";
+
 export type NavItem = Readonly<{
-    name: string;
-    type: string;
-    href: string;
-}>
+  key: NavKey;
+  type: string;
+  href: string;
+}>;
 
 const navItems = [
-    {
-        name: "Inicio",
-        type: "link",
-        href: "/"
-    },
-    {
-        name: "Acerca de",
-        type: "link",
-        href: "/about"
-    },
-    {
-        name: "Proyectos",
-        type: "link",
-        href: "/projects"
-    },
-    {
-        name: "Blog",
-        type: "link",
-        href: "/blog"
-    },
-    {
-        name: "Contacto",
-        type: "action",
-        href: "#"
-    },
-] as const satisfies readonly NavItem[]
+  {
+    key: "home",
+    type: "link",
+    href: "/",
+  },
+  {
+    key: "about",
+    type: "link",
+    href: "/about",
+  },
+  {
+    key: "projects",
+    type: "link",
+    href: "/projects",
+  },
+  {
+    key: "blog",
+    type: "link",
+    href: "/blog",
+  },
+  {
+    key: "contact",
+    type: "action",
+    href: "#",
+  },
+] as const satisfies readonly NavItem[];
 
-export default navItems
+export default navItems;

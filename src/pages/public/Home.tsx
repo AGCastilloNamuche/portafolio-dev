@@ -23,9 +23,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Grid } from "swiper/modules";
 import { companies } from "../../lib/db/company";
 import { useTheme } from "../../layouts/ThemeContext";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
   const { isDark } = useTheme();
+  const { t } = useTranslation();
   return (
     <div className="content">
       <div className="d-block m-auto text-center w-100 container-title mb-15">
@@ -34,10 +36,10 @@ const Home = () => {
             <IconBulb size={90} color={isDark ? "#ffff" : "#4c6763"} />
           </span>
           <span className="flex justify-center relative font-acorn">
-            Hola. Soy
+            {t("home.greeting")}
           </span>
           <span className="flex justify-center relative font-acorn">
-            Gian Pierre
+            {t("home.name")}
           </span>
           <span className="absolute top-0 right-0">
             <IconPalette
@@ -49,9 +51,7 @@ const Home = () => {
         </h1>
         <div className="wrapper">
           <p className="text-center grid-column-2 subtitle">
-            Ingeniero de sistemas y desarrollador full stack (web y móvil). Me
-            apasiona crear experiencias atractivas, accesibles y centradas en el
-            usuario.
+            {t("home.subtitle")}
           </p>
         </div>
       </div>
@@ -80,8 +80,12 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="card-header mb-5">
-                  <h3 className="card-subtitle text-right">Trayectoria</h3>
-                  <h2 className="card-title text-right">Mi Experiencia</h2>
+                  <h3 className="card-subtitle text-right">
+                    {t("home.bento.exp_sub")}
+                  </h3>
+                  <h2 className="card-title text-right">
+                    {t("home.bento.exp_title")}
+                  </h2>
                 </div>
                 <EditWell />
               </div>
@@ -106,8 +110,12 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="card-header mb-5">
-                  <h3 className="card-subtitle text-right">Mi portafolio</h3>
-                  <h2 className="card-title text-right">Mis Proyectos</h2>
+                  <h3 className="card-subtitle text-right">
+                    {t("home.bento.proj_sub")}
+                  </h3>
+                  <h2 className="card-title text-right">
+                    {t("home.bento.proj_title")}
+                  </h2>
                 </div>
                 <div className="main-area-inner">
                   <div
@@ -155,9 +163,11 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="card-header mb-5">
-                  <h3 className="card-subtitle text-right">Herramientas</h3>
+                  <h3 className="card-subtitle text-right">
+                    {t("home.bento.tools_sub")}
+                  </h3>
                   <h2 className="card-title text-right">
-                    Diseñar y desarrollar
+                    {t("home.bento.tools_title")}
                   </h2>
                 </div>
                 <div className="d-flex">
@@ -198,8 +208,12 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="card-header mb-5">
-                  <h3 className="card-subtitle text-right">Blog</h3>
-                  <h2 className="card-title text-right">Artículos</h2>
+                  <h3 className="card-subtitle text-right">
+                    {t("home.bento.blog_sub")}
+                  </h3>
+                  <h2 className="card-title text-right">
+                    {t("home.bento.blog_title")}
+                  </h2>
                 </div>
                 <div className="d-flex align-center justify-center ">
                   <DotLottieReact
@@ -216,7 +230,112 @@ const Home = () => {
         </div>
       </div>
       {/* Flujo de trabajo */}
-      <div className="container-workflow mb-10">
+      <div className="container-workflow mb-20 max-w-7xl mx-auto px-4 sm:px-6">
+        <h2 className="text-center text-h1 dark:text-[#b9ffee] line-height-1">
+          {t("home.workflow.title")}
+        </h2>
+        <div className="wrapper mb-15">
+          <p className="text-center grid-column-2 subtitle">
+            {t("home.workflow.subtitle")}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3! gap-6">
+          {[
+            {
+              id: "01",
+              title: t("home.workflow.plan.title"),
+              subtitle: t("home.workflow.plan.sub"),
+              desc: t("home.workflow.plan.desc"),
+              color: "teal",
+            },
+            {
+              id: "02",
+              title: t("home.workflow.design.title"),
+              subtitle: t("home.workflow.design.sub"),
+              desc: t("home.workflow.design.desc"),
+              color: "blue",
+            },
+            {
+              id: "03",
+              title: t("home.workflow.dev.title"),
+              subtitle: t("home.workflow.dev.sub"),
+              desc: t("home.workflow.dev.desc"),
+              color: "orange",
+            },
+            {
+              id: "04",
+              title: t("home.workflow.qa.title"),
+              subtitle: t("home.workflow.qa.sub"),
+              desc: t("home.workflow.qa.desc"),
+              color: "pink",
+            },
+            {
+              id: "05",
+              title: t("home.workflow.delivery.title"),
+              subtitle: t("home.workflow.delivery.sub"),
+              desc: t("home.workflow.delivery.desc"),
+              color: "purple",
+            },
+            {
+              id: "06",
+              title: t("home.workflow.iteration.title"),
+              subtitle: t("home.workflow.iteration.sub"),
+              desc: t("home.workflow.iteration.desc"),
+              color: "emerald",
+            },
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className={[
+                "group card card-flat rounded-4xl! p-8! backdrop-blur-[20px]! hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)]! overflow-hidden flex flex-col min-h-[260px]",
+                item.color === "teal"
+                  ? "bg-dark-white30"
+                  : item.color === "blue"
+                    ? "bg-sky-500/10!"
+                    : item.color === "orange"
+                      ? "bg-orange-500/10!"
+                      : item.color === "pink"
+                        ? "bg-pink-500/10!"
+                        : item.color === "purple"
+                          ? "bg-purple-500/10!"
+                          : "bg-emerald-500/10!",
+              ].join(" ")}
+            >
+              <h1 className="absolute -top-4 right-2! text-[100px] font-bold text-[#00000029]">
+                {item.id}
+              </h1>
+              <div className="relative z-10 flex flex-col h-full">
+                <h3
+                  className={`text-xs font-bold uppercase tracking-widest mb-4 transition-colors ${
+                    item.color === "teal"
+                      ? "text-teal-500"
+                      : item.color === "blue"
+                        ? "text-sky-500"
+                        : item.color === "orange"
+                          ? "text-orange-500"
+                          : item.color === "pink"
+                            ? "text-pink-500"
+                            : item.color === "purple"
+                              ? "text-purple-500"
+                              : "text-emerald-500"
+                  }`}
+                >
+                  {item.subtitle}
+                </h3>
+                <h2 className="text-2xl font-acorn font-bold text-zinc-800 dark:text-white mb-4">
+                  {item.title}
+                </h2>
+                <p className="text-zinc-500 dark:text-white text-sm leading-relaxed mt-auto">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* <div className="container-workflow mb-10">
         <h2 className="text-center text-h1 dark:text-[#b9ffee] line-height-1">
           Flujo de trabajo
         </h2>
@@ -299,16 +418,15 @@ const Home = () => {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Colaboración */}
       <div className="container-business">
         <h2 className="text-center text-h1 dark:text-[#b9ffee] line-height-1">
-          Colaboraciones
+          {t("home.colab.title")}
         </h2>
         <div className="wrapper mb-15">
           <p className="text-center grid-column-2 subtitle">
-            He trabajado con empresas increíbles, creando soluciones digitales
-            para web y móvil.
+            {t("home.colab.subtitle")}
           </p>
         </div>
 

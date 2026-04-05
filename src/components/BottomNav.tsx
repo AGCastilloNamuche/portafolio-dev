@@ -2,37 +2,33 @@ import { NavLink, useLocation } from "react-router";
 import type { NavItem } from "../navigation";
 import {
   IconHome2,
-  IconSearch,
-  IconChartPie3,
-  IconClock,
-  IconUser,
   IconInfoCircle,
   IconDeviceAnalytics,
   IconMessage2Code,
   IconSubtitlesEdit,
 } from "@tabler/icons-react";
 import { createPortal } from "react-dom";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   navItems: readonly NavItem[];
   onContactClick?: () => void;
 };
 
-const getIcon = (name: string, isActive: boolean) => {
+const getIcon = (key: NavItem["key"]) => {
   const size = 26;
   const stroke = 1.4;
 
-  // Mapeando para coincidir con el diseño fotográfico solicitado
-  switch (name) {
-    case "Inicio":
+  switch (key) {
+    case "home":
       return <IconHome2 size={size} stroke={stroke} />;
-    case "Blog":
+    case "blog":
       return <IconSubtitlesEdit size={size} stroke={stroke} />;
-    case "Proyectos":
+    case "projects":
       return <IconDeviceAnalytics size={size} stroke={stroke} />;
-    case "Contacto":
+    case "contact":
       return <IconMessage2Code size={size} stroke={stroke} />;
-    case "Acerca de":
+    case "about":
       return <IconInfoCircle size={size} stroke={stroke} />;
     default:
       return <IconHome2 size={size} stroke={stroke} />;
@@ -41,6 +37,7 @@ const getIcon = (name: string, isActive: boolean) => {
 
 const BottomNav = ({ navItems, onContactClick }: Props) => {
   const location = useLocation();
+  const { t } = useTranslation();
 
   return createPortal(
     <div className="fixed bottom-0 left-0 w-full z-50 md:hidden block">
@@ -55,7 +52,7 @@ const BottomNav = ({ navItems, onContactClick }: Props) => {
               to={item.href}
               key={item.href}
               onClick={(e) => {
-                if (item.name === "Contacto" && onContactClick) {
+                if (item.key === "contact" && onContactClick) {
                   e.preventDefault();
                   onContactClick();
                 }
@@ -68,7 +65,7 @@ const BottomNav = ({ navItems, onContactClick }: Props) => {
               ].join(" ")}
             >
               <div className="flex items-center gap-1">
-                <div className="shrink-0">{getIcon(item.name, isActive)}</div>
+                <div className="shrink-0">{getIcon(item.key)}</div>
                 <span
                   className={[
                     "!text-[14px] font-[400] whitespace-nowrap overflow-hidden transition-all duration-300 ease-in-out",
@@ -77,7 +74,7 @@ const BottomNav = ({ navItems, onContactClick }: Props) => {
                       : "max-w-0 opacity-0 ml-0",
                   ].join(" ")}
                 >
-                  {item.name}
+                  {t(`nav.${item.key}`)}
                 </span>
               </div>
             </NavLink>

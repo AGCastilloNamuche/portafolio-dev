@@ -1,7 +1,8 @@
 import React, { useMemo } from "react";
 import { Tabs } from "../../components";
 import { category } from "../../lib/db/category";
-import { projects, type Projects } from "../../lib/db/projects";
+import { projects } from "../../lib/db/projects";
+import { useTranslation } from "react-i18next";
 
 // ===== pre-index fuera del componente (se calcula 1 vez por carga del módulo) =====
 type ProjectType = (typeof projects)[number];
@@ -23,64 +24,73 @@ const ProjectGrid = React.memo(function ProjectGrid({
 }: {
   items: ReadonlyArray<ProjectType>;
 }) {
+  const { t } = useTranslation();
+
   return (
     <div className="grid gap-5 md:grid-cols-2 lg:!grid-cols-3">
-      {items.map((pr) => (
-        <a className="cursor-pointer" key={pr.id} href={`projects/${pr.id}`}>
-          <article>
-            <div className="card p-0 !bg-transparent !shadow-none">
-              <figure className="w-100 overflow-hidden rounded-3xl">
-                <img
-                  className="object-cover rounded-3xl transition-all duration-300 transform hover:scale-[1.1]"
-                  src={pr.images[0]}
-                  alt={pr.title}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
+      {items.map((pr) => {
+        const projectTitle = t(`projects.${pr.id}.title`, {
+          defaultValue: pr.title,
+        });
 
-              <div className="card-body !px-4 !py-4">
-                <h2 className="card-title text-[#13765e] dark:text-[#b9ffee]">
-                  {pr.title}
-                </h2>
-                <p className="dark:text-white">{pr.category.name}</p>
+        return (
+          <a className="cursor-pointer" key={pr.id} href={`/projects/${pr.id}`}>
+            <article>
+              <div className="card p-0 !bg-transparent !shadow-none">
+                <figure className="w-100 overflow-hidden rounded-3xl">
+                  <img
+                    className="object-cover rounded-3xl transition-all duration-300 transform hover:scale-[1.1]"
+                    src={pr.images[0]}
+                    alt={projectTitle}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </figure>
+
+                <div className="card-body !px-4 !py-4">
+                  <h2 className="card-title text-[#13765e] dark:text-[#b9ffee]">
+                    {projectTitle}
+                  </h2>
+                  <p className="dark:text-white">
+                    {t(`categories.${pr.category.key}`)}
+                  </p>
+                </div>
               </div>
-            </div>
-          </article>
-        </a>
-      ))}
+            </article>
+          </a>
+        );
+      })}
     </div>
   );
 });
 
 const Project = () => {
+  const { t, i18n } = useTranslation();
+
   const tabs = useMemo(
     () => [
       {
-        label: "Todo",
+        label: t("common.all"),
         id: "all",
         content: () => <ProjectGrid items={projects} />,
       },
       ...category.map((ct) => ({
-        label: ct.name,
+        label: t(`categories.${ct.key}`),
         id: ct.key,
         content: () => <ProjectGrid items={PROJECTS_BY_KEY[ct.key] ?? []} />,
       })),
     ],
-    [],
+    [i18n.resolvedLanguage, t],
   );
 
   return (
     <div className="content">
       <div className="block m-auto text-center w-full container-title">
-        <h1 className="mb-5">Proyectos</h1>
+        <h1 className="mb-5">{t("projectsPage.title")}</h1>
 
         <div className="grid grid-cols-[1fr_min(65ch,100%)_1fr]">
           <div className="col-2 text-center">
-            <p className="text-center subtitle">
-              Trabajos reales que muestran cómo convierto ideas en productos web
-              y móviles listos para producción.
-            </p>
+            <p className="text-center subtitle">{t("projectsPage.subtitle")}</p>
           </div>
         </div>
       </div>

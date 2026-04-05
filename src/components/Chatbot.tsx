@@ -3,6 +3,9 @@ import { IconX, IconSend2, IconRobotFace } from "@tabler/icons-react";
 import { createPortal } from "react-dom";
 import emailjs from "@emailjs/browser";
 import profile from "../assets/images/perfil.png";
+import { useNavigate } from "react-router";
+import { useTranslation } from "react-i18next";
+import { getIntlLocale } from "../lib/localization";
 
 // Importante: No exponer las claves aquí, se obtienen de .env
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
@@ -30,27 +33,51 @@ type ChatStep =
   | "look_around"
   | "finished";
 
-const INITIAL_MESSAGE: Message = {
-  id: 1,
-  text: "¡Hola! Soy Gianpierre. ¿En qué te puedo ayudar hoy?",
-  sender: "bot",
-  timestamp: new Date().toLocaleTimeString([], {
-    hour: "2-digit",
-    minute: "2-digit",
-  }),
-};
-
-import { useNavigate } from "react-router";
-
 const Chatbot = ({ isOpen, onClose }: Props) => {
   const navigate = useNavigate();
-  const [messages, setMessages] = useState<Message[]>([INITIAL_MESSAGE]);
+  const { t, i18n } = useTranslation();
+  const locale = getIntlLocale(i18n.resolvedLanguage);
+  const createTimestamp = () =>
+    new Date().toLocaleTimeString(locale, {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  const createInitialMessage = (): Message => ({
+    id: 1,
+    text: t("chatbot.initialMessage"),
+    sender: "bot",
+    timestamp: createTimestamp(),
+  });
+
+  const [messages, setMessages] = useState<Message[]>(() => [
+    createInitialMessage(),
+  ]);
   const [inputValue, setInputValue] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [chatStep, setChatStep] = useState<ChatStep>("initial");
   const [viewMode, setViewMode] = useState<"home" | "chat">("home");
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    const initialMessage: Message = {
+      id: 1,
+      text: t("chatbot.initialMessage"),
+      sender: "bot",
+      timestamp: new Date().toLocaleTimeString(locale, {
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
+    };
+
+    setMessages((prev) => {
+      if (prev.length === 1 && prev[0]?.id === 1 && prev[0]?.sender === "bot") {
+        return [initialMessage];
+      }
+
+      return prev;
+    });
+  }, [locale, t]);
 
   useEffect(() => {
     if (isOpen) {
@@ -64,9 +91,9 @@ const Chatbot = ({ isOpen, onClose }: Props) => {
 
   const getGreeting = () => {
     const hour = new Date().getHours();
-    if (hour < 12) return "Buenos días,";
-    if (hour < 19) return "Buenas tardes,";
-    return "Buenas noches,";
+    if (hour < 12) return t("chatbot.greetingMorning");
+    if (hour < 19) return t("chatbot.greetingAfternoon");
+    return t("chatbot.greetingEvening");
   };
 
   const addBotMessages = (texts: string[], newStep: ChatStep) => {
@@ -81,10 +108,7 @@ const Chatbot = ({ isOpen, onClose }: Props) => {
             id: Date.now() + index,
             text,
             sender: "bot",
-            timestamp: new Date().toLocaleTimeString([], {
-              hour: "2-digit",
-              minute: "2-digit",
-            }),
+            timestamp: createTimestamp(),
           },
         ]);
         if (index === texts.length - 1) {
@@ -101,62 +125,53 @@ const Chatbot = ({ isOpen, onClose }: Props) => {
       if (localStorage.getItem("contact_sent") === "true") {
         const userMsg: Message = {
           id: Date.now(),
-          text: "Me gustaría contactarme",
+          text: t("chatbot.options.contact"),
           sender: "user",
-          timestamp: new Date().toLocaleTimeString([], {
-            hour: "2-digit",
-            minute: "2-digit",
-          }),
+          timestamp: createTimestamp(),
         };
         setMessages((prev) => [...prev, userMsg]);
         setChatStep("finished");
         addBotMessages(
           [
-            "Ya tenemos un mensaje en recepción, nos comunicaremos lo más pronto posible. 😊",
+            t("chatbot.messages.alreadyReceived"),
           ],
-          "finished"
+          "finished",
         );
         return;
       }
 
       const userMsg: Message = {
         id: Date.now(),
-        text: "Me gustaría contactarme",
+        text: t("chatbot.options.contact"),
         sender: "user",
-        timestamp: new Date().toLocaleTimeString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-        }),
+        timestamp: createTimestamp(),
       };
       setMessages((prev) => [...prev, userMsg]);
       setChatStep("waiting_contact"); // Optimistically clear buttons
 
       addBotMessages(
         [
-          "¡Excelente elección! ⚡️",
-          "Estoy listo para ayudarte en lo que necesites. ¡Escríbeme ahora mismo y nos ponemos manos a la obra! 🤝",
-          "Por favor, déjanos tu número o correo para que podamos estar en contacto directo.",
+          t("chatbot.messages.contactStart1"),
+          t("chatbot.messages.contactStart2"),
+          t("chatbot.messages.contactStart3"),
         ],
         "waiting_contact",
       );
     } else if (option === 2) {
       const userMsg: Message = {
         id: Date.now(),
-        text: "Solo estoy echando un vistazo",
+        text: t("chatbot.options.browse"),
         sender: "user",
-        timestamp: new Date().toLocaleTimeString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-        }),
+        timestamp: createTimestamp(),
       };
       setMessages((prev) => [...prev, userMsg]);
       setChatStep("look_around"); // Clear buttons
 
       addBotMessages(
         [
-          "¡No hay problema! Ponte cómodo y echa un vistazo a todo lo que quieras. 🙌",
-          "Espero que disfrutes viendo mis proyectos. Si te surge alguna duda o quieres profundizar en algo, ¡aquí estaré para ayudarte! 😊",
-          "¿Qué te gustaría ver primero?",
+          t("chatbot.messages.browse1"),
+          t("chatbot.messages.browse2"),
+          t("chatbot.messages.browse3"),
         ],
         "look_around",
       );
@@ -173,10 +188,7 @@ const Chatbot = ({ isOpen, onClose }: Props) => {
       id: Date.now(),
       text: inputValue.trim(),
       sender: "user",
-      timestamp: new Date().toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-      }),
+      timestamp: createTimestamp(),
     };
 
     setMessages((prev) => [...prev, userMsg]);
@@ -187,9 +199,7 @@ const Chatbot = ({ isOpen, onClose }: Props) => {
 
     if (chatStep === "initial") {
       addBotMessages(
-        [
-          "¡Entendido! Para poder ayudarte exactamente con lo que buscas, te invito a elegir una de estas opciones:",
-        ],
+        [t("chatbot.messages.initialPrompt")],
         "initial",
       );
       return;
@@ -201,9 +211,7 @@ const Chatbot = ({ isOpen, onClose }: Props) => {
 
       if (!emailMatch && !phoneMatch) {
         addBotMessages(
-          [
-            "Por favor, asegúrate de escribir tu correo electrónico o un número de teléfono para que pueda contactarte. 😅",
-          ],
+          [t("chatbot.messages.invalidContact")],
           "waiting_contact",
         );
         return;
@@ -213,8 +221,8 @@ const Chatbot = ({ isOpen, onClose }: Props) => {
       setChatStep("contact_received");
       addBotMessages(
         [
-          "¡Recibido! Muchas gracias por la información. 🙌",
-          "Estaremos en contacto contigo muy pronto para seguir avanzando. ¡Que tengas un gran día! ✨",
+          t("chatbot.messages.received1"),
+          t("chatbot.messages.received2"),
         ],
         "finished",
       );
@@ -252,12 +260,9 @@ const Chatbot = ({ isOpen, onClose }: Props) => {
             console.error("Error al enviar confirmación al usuario:", err),
           );
       }
-    } else if (chatStep === "initial" || chatStep === "look_around") {
+    } else {
       // Fallback for unexpected messages
-      addBotMessages(
-        ["¡Gracias por escribirme! Estaré revisándolo pronto."],
-        chatStep,
-      );
+      addBotMessages([t("chatbot.messages.genericThanks")], chatStep);
     }
   };
 
@@ -272,7 +277,7 @@ const Chatbot = ({ isOpen, onClose }: Props) => {
               <img
                 className="h-full object-cover"
                 src={profile}
-                alt="Invitado"
+                alt={t("chatbot.guest")}
               />
             </div>
             <div className="flex flex-col">
@@ -280,7 +285,7 @@ const Chatbot = ({ isOpen, onClose }: Props) => {
                 {getGreeting()}
               </span>
               <span className="text-gray-800 dark:text-white font-semibold text-[13px]">
-                Invitado
+                {t("chatbot.guest")}
               </span>
             </div>
           </div>
@@ -304,11 +309,11 @@ const Chatbot = ({ isOpen, onClose }: Props) => {
             </div>
             <div className="flex flex-col">
               <h3 className="text-white font-bold text-[15px] leading-tight m-0">
-                Gian Pierre AI
+                {t("chatbot.aiName")}
               </h3>
               <span className="text-emerald-100/80 text-xs flex items-center gap-1">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                En línea
+                {t("chatbot.online")}
               </span>
             </div>
           </div>
@@ -331,11 +336,10 @@ const Chatbot = ({ isOpen, onClose }: Props) => {
             />
           </div>
           <h2 className="text-[26px]! font-bold text-gray-900 dark:text-white mb-3">
-            ¿Necesitas algo?
+            {t("chatbot.homeTitle")}
           </h2>
           <p className="text-[13px] text-gray-500 dark:text-gray-400 max-w-[280px] mb-8 leading-relaxed">
-            Nuestro asistente de IA inteligente te ayuda a encontrar exactamente
-            lo que necesitas, más rápido y fácil que nunca.
+            {t("chatbot.homeSubtitle")}
           </p>
 
           <div className="flex  items-center justify-center gap-3 mb-10 w-full">
@@ -343,13 +347,13 @@ const Chatbot = ({ isOpen, onClose }: Props) => {
               onClick={() => handleOptionSelect(1)}
               className="cursor-pointer bg-white dark:bg-[#11241d]! border border-gray-100 dark:border-white/5 text-gray-700 dark:text-gray-300! rounded-full px-4! py-2.5! text-[12px]! font-medium hover:bg-gray-50 dark:hover:bg-white/10! transition-colors shadow-xs flex items-center"
             >
-              📞 Me gustaría contactarme
+              {t("chatbot.options.contact")}
             </button>
             <button
               onClick={() => handleOptionSelect(2)}
               className="cursor-pointer bg-white dark:bg-[#11241d]! border border-gray-100 dark:border-white/5 text-gray-700 dark:text-gray-300! rounded-full px-4! py-2.5! text-[12px]! font-medium hover:bg-gray-50 dark:hover:bg-white/10! transition-colors shadow-xs flex items-center"
             >
-              👀 Solo echando un vistazo
+              {t("chatbot.options.browse")}
             </button>
           </div>
         </div>
@@ -390,13 +394,13 @@ const Chatbot = ({ isOpen, onClose }: Props) => {
                 onClick={() => handleOptionSelect(1)}
                 className="text-left cursor-pointer bg-white dark:bg-[#11241d]! border border-[#025a4e] text-[#025a4e] dark:border-[#b9ffee50] dark:text-[#b9ffee] rounded-2xl px-4! py-2.5! text-[13px]! font-medium hover:bg-[#025a4e]! hover:text-white! dark:hover:bg-[#b9ffee20]! transition-colors shadow-sm w-fit"
               >
-                📞 Me gustaría contactarme
+                {t("chatbot.options.contact")}
               </button>
               <button
                 onClick={() => handleOptionSelect(2)}
                 className="text-left cursor-pointer bg-white dark:bg-[#11241d]! border border-gray-300 dark:border-white/10 text-gray-700 dark:text-gray-300! rounded-2xl px-4! py-2.5! text-[13px]! font-medium hover:bg-gray-100 dark:hover:bg-white/5! transition-colors shadow-sm w-fit"
               >
-                👀 Solo echando un vistazo
+                {t("chatbot.options.browse")}
               </button>
             </div>
           )}
@@ -410,7 +414,7 @@ const Chatbot = ({ isOpen, onClose }: Props) => {
                 }}
                 className="text-left cursor-pointer bg-white dark:bg-[#11241d]! border border-gray-200 dark:border-white/10 text-gray-800 dark:text-gray-200! rounded-xl! px-3! py-2! text-[13px] hover:bg-gray-50 dark:hover:bg-white/5! transition-colors shadow-sm flex items-center justify-between"
               >
-                <span>📂 Ver Proyectos (Portfolio)</span>
+                <span>{t("chatbot.quickLinks.projects")}</span>
               </button>
               <button
                 onClick={() => {
@@ -419,7 +423,7 @@ const Chatbot = ({ isOpen, onClose }: Props) => {
                 }}
                 className="text-left cursor-pointer bg-white dark:bg-[#11241d]! border border-gray-200 dark:border-white/10 text-gray-800 dark:text-gray-200! rounded-xl! px-3! py-2! text-[13px] hover:bg-gray-50 dark:hover:bg-white/5! transition-colors shadow-sm flex items-center justify-between"
               >
-                <span>🛠️ Tecnologías que uso</span>
+                <span>{t("chatbot.quickLinks.tech")}</span>
               </button>
               <button
                 onClick={() => {
@@ -428,7 +432,7 @@ const Chatbot = ({ isOpen, onClose }: Props) => {
                 }}
                 className="text-left cursor-pointer bg-white dark:bg-[#11241d]! border border-gray-200 dark:border-white/10 text-gray-800 dark:text-gray-200! rounded-xl! px-3! py-2! text-[13px] hover:bg-gray-50 dark:hover:bg-white/5! transition-colors shadow-sm flex items-center justify-between"
               >
-                <span>📈 Mi exp. en Agrotech</span>
+                <span>{t("chatbot.quickLinks.agrotech")}</span>
               </button>
               <button
                 onClick={() => {
@@ -437,7 +441,7 @@ const Chatbot = ({ isOpen, onClose }: Props) => {
                 }}
                 className="text-left cursor-pointer bg-emerald-50 dark:bg-[#025a4e20] border border-emerald-200 dark:border-[#b9ffee30] text-emerald-800 dark:text-[#b9ffee]! rounded-xl! px-3! py-2! text-[13px] hover:bg-emerald-100 dark:hover:bg-[#b9ffee40]! transition-colors shadow-sm flex items-center justify-between mt-1 font-medium"
               >
-                <span>💬 ¡Hablemos!</span>
+                <span>{t("chatbot.quickLinks.talk")}</span>
               </button>
             </div>
           )}
@@ -467,7 +471,7 @@ const Chatbot = ({ isOpen, onClose }: Props) => {
                 handleSend(e as any);
               }
             }}
-            placeholder="Escribe tu mensaje..."
+            placeholder={t("chatbot.inputPlaceholder")}
             className="flex-1 bg-transparent border-none outline-none !text-[14.5px] leading-relaxed text-gray-700 dark:text-gray-100 resize-none overflow-y-auto !py-2 !px-3 break-all scrollbar-thin"
           />
           <button

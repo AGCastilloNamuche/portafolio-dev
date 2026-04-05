@@ -2,30 +2,47 @@ import { companies } from "../../lib/db/company";
 import { workExperience } from "../../lib/db/type_experience";
 import { experience, schedule } from "../../lib/db/experience";
 import dayjs from "dayjs";
+import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 const Skill = () => {
+  const { t, i18n } = useTranslation();
+  const localizedExperience = useMemo(
+    () =>
+      experience.map((exp) => ({
+        ...exp,
+        title: t(`skill.items.${exp.id}.title`, { defaultValue: exp.title }),
+        description: t(`skill.items.${exp.id}.description`, {
+          defaultValue: exp.description,
+        }),
+      })),
+    [i18n.resolvedLanguage, t],
+  );
+
   return (
     <div className="content">
       <div className="block m-auto text-center w-full container-title">
-        <h1 className="letter-spacing-1">Experiencia</h1>
+        <h1 className="letter-spacing-1">{t("skill.title")}</h1>
       </div>
 
       <div className="grid grid-cols-1 lg:place-items-start  lg:grid-cols-4 gap-5">
         <div className="flex lg:flex-col md:justify-center md:gap-8  lg:gap-5">
           <div className="flex flex-col">
-            <h3 className="text-lg text-[#025a4e] dark:text-[#b9ffee]">Tipo</h3>
-            <span className="dark:text-white">{workExperience}</span>
+            <h3 className="text-lg text-[#025a4e] dark:text-[#b9ffee]">
+              {t("skill.typeLabel")}
+            </h3>
+            <span className="dark:text-white">{t("skill.workType")}</span>
           </div>
           <div className="flex flex-col">
             <h3 className="text-lg text-[#025a4e] dark:text-[#b9ffee]">
-              Cronograma
+              {t("skill.scheduleLabel")}
             </h3>
             <span className="dark:text-white">{schedule()}</span>
           </div>
 
           <div className="flex flex-col">
             <h3 className="text-lg text-[#025a4e] dark:text-[#b9ffee]">
-              Empresas
+              {t("skill.companiesLabel")}
             </h3>
             <span className="flex gap-3 dark:text-white">
               {companies.map((comp) => {
@@ -58,19 +75,19 @@ const Skill = () => {
 
         <div className="lg:col-span-3">
           <div className="flex flex-col gap-5">
-            {experience
+            {localizedExperience
               .filter((exp) => exp.typeExperience === workExperience)
               .map((exp) => {
                 return (
                   <div key={exp.id} className="card !bg-transparent card-flat">
                     <div className="grid grid-cols-5">
                       <div className="text-sm text-[#025a4e] dark:text-[#defdf5] col-span-1 uppercase mt-3">
-                        {dayjs(exp.start_date).format("MMM YYYY")} -{" "}
+                        {dayjs(exp.start_date).format(t("formats.monthYear"))} -{" "}
                         <span>
                           {" "}
                           {exp.is_active
-                            ? "Presente"
-                            : dayjs(exp.end_date).format("MMM YYYY")}{" "}
+                            ? t("skill.present")
+                            : dayjs(exp.end_date).format(t("formats.monthYear"))}{" "}
                         </span>
                       </div>
                       <div className="col-span-4">

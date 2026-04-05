@@ -1,4 +1,5 @@
 import { Link, isRouteErrorResponse, useRouteError } from "react-router";
+import { useTranslation } from "react-i18next";
 import AppShell from "../layouts/AppShell";
 
 type ErrorLabels = {
@@ -16,10 +17,10 @@ function safeStringify(data: unknown) {
   }
 }
 
-function getErrorLabels(error: unknown): ErrorLabels {
+function getErrorLabels(error: unknown, t: (key: string) => string): ErrorLabels {
   const base: ErrorLabels = {
-    title: "Error inesperado",
-    subtitle: "Ocurrió un problema.",
+    title: t("errorPage.unexpectedTitle"),
+    subtitle: t("errorPage.unexpectedSubtitle"),
     details: null,
   };
 
@@ -28,17 +29,16 @@ function getErrorLabels(error: unknown): ErrorLabels {
 
     if (status === 404) {
       return {
-        title: "404",
-        subtitle: "¡Ups! Página no encontrada",
-        details:
-          "Lo sentimos, no podemos encontrar la página que estás buscando.",
+        title: t("errorPage.notFoundTitle"),
+        subtitle: t("errorPage.notFoundSubtitle"),
+        details: t("errorPage.notFoundDetails"),
         statusCode: status,
       };
     }
 
     return {
       title: String(status),
-      subtitle: statusText || "Ocurrió un error",
+      subtitle: statusText || t("errorPage.genericSubtitle"),
       details: typeof data === "string" ? data : safeStringify(data),
       statusCode: status,
     };
@@ -60,7 +60,8 @@ function getErrorLabels(error: unknown): ErrorLabels {
 
 export default function ErrorPage() {
   const error = useRouteError() as unknown;
-  const label = getErrorLabels(error);
+  const { t } = useTranslation();
+  const label = getErrorLabels(error, t);
 
   return (
     <AppShell>
@@ -76,7 +77,7 @@ export default function ErrorPage() {
               to="/"
               className="mt-5 inline-flex items-center rounded-x px-4 py-2 text-[16px] font-medium"
             >
-              Volver al inicio
+              {t("errorPage.backHome")}
             </Link>
           </div>
         </div>

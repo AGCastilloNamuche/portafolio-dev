@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { IconChevronRight } from "@tabler/icons-react";
+import { useTranslation } from "react-i18next";
 
 export interface BreadcrumbItem {
   label: string;
@@ -11,10 +11,12 @@ interface BreadcrumbsProps {
 }
 
 const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
+  const { t } = useTranslation();
+
   return (
     <nav
       className="flex items-center text-sm mb-6 mt-4 w-full justify-center"
-      aria-label="Breadcrumb"
+      aria-label={t("accessibility.breadcrumb")}
     >
       <div className="flex items-center space-x-1 sm:space-x-2">
         {items.map((item, index) => {

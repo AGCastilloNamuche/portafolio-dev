@@ -1,9 +1,10 @@
 import { NavLink, useMatch } from "react-router";
+import { LanguageSelector } from "./LanguageSelector";
 import type { NavItem } from "../navigation";
-import { IconCode, IconMoon, IconSun } from "@tabler/icons-react";
+import { IconMoon, IconSun } from "@tabler/icons-react";
 import logo from "../assets/images/logo.svg?raw";
-import { useEffect, useState } from "react";
 import { useTheme } from "../layouts/ThemeContext";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   navItems: readonly NavItem[];
@@ -16,6 +17,7 @@ const HorizontalNavLayout = ({ navItems, onContactClick }: Props) => {
   const inicioActive = Boolean(homeMatch || skillMatch);
 
   const { isDark, toggle } = useTheme();
+  const { t } = useTranslation();
 
   return (
     <div className="layout-navbar-and-nav-container">
@@ -28,7 +30,7 @@ const HorizontalNavLayout = ({ navItems, onContactClick }: Props) => {
             <nav className="navbar-content hidden md:block">
               <ul className="nav-items">
                 {navItems.map((item) => {
-                  const { href, name } = item;
+                  const { href, key } = item;
                   return (
                     <li key={href}>
                       <NavLink
@@ -38,14 +40,14 @@ const HorizontalNavLayout = ({ navItems, onContactClick }: Props) => {
                           return isActive ? "active" : "";
                         }}
                         onClick={(e) => {
-                          if (name === "Contacto" && onContactClick) {
+                          if (key === "contact" && onContactClick) {
                             e.preventDefault();
                             onContactClick();
                           }
                         }}
                         to={href}
                       >
-                        <span className="mr-2">{name} </span>
+                        <span className="mr-2">{t(`nav.${key}`)} </span>
                         {href === "/" && (
                           <span className="border-1 rounded border-gray-300 code   dark:!text-white">
                             {" "}
@@ -59,7 +61,8 @@ const HorizontalNavLayout = ({ navItems, onContactClick }: Props) => {
               </ul>
             </nav>
 
-            <div className="container-button flex items-center gap-2">
+            <div className="container-button flex items-center gap-4">
+              <LanguageSelector />
               <button
                 type="button"
                 className="dark:!bg-white/10 bg-white/60 backdrop-blur-md border border-white/40 dark:border-white/10 rounded-full !py-1 !px-2 flex gap-2 items-center cursor-pointer dark:shadow-none transition-colors"

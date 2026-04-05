@@ -1,16 +1,23 @@
 import { useParams } from "react-router";
 import { projects } from "../../lib/db/projects";
-import { IconDevicesCode, IconX } from "@tabler/icons-react";
+import { IconX } from "@tabler/icons-react";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { useTheme } from "../../layouts/ThemeContext";
 import { Breadcrumbs } from "../../components";
+import { useTranslation } from "react-i18next";
+import { normalizeLanguage } from "../../lib/localization";
 
 const ProjectId = () => {
   const { id } = useParams();
   const { isDark } = useTheme();
+  const { t, i18n } = useTranslation();
   const project = projects.find((p) => p.id === id);
+  const projectTitle = project
+    ? t(`projects.${project.id}.title`, { defaultValue: project.title })
+    : "";
+  const isSpanish = normalizeLanguage(i18n.resolvedLanguage) === "es";
 
   // ESTADO PARA EL LIGHTBOX
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -32,13 +39,13 @@ const ProjectId = () => {
   return (
     <div className="w-full h-full">
       <div className="block mx-auto max-w-6xl m-auto text-center w-full container-title !mb-0 px-4 md:px-0">
-        <h1 className="mb-5 sm:!text-8xl uppercase">{project?.title}</h1>
+        <h1 className="mb-5 sm:!text-8xl uppercase">{projectTitle}</h1>
         <div className="grid grid-cols-[1fr_min(65ch,100%)_1fr]">
           <div className="col-2 text-center">
             <Breadcrumbs
               items={[
-                { label: "Proyectos", href: "/projects" },
-                { label: project?.title || "" },
+                { label: t("projectDetail.breadcrumb"), href: "/projects" },
+                { label: projectTitle },
               ]}
             />
           </div>
@@ -51,7 +58,7 @@ const ProjectId = () => {
             <div className="card overflow-hidden p-0  w-full !shadow-none !bg-[#ffffff44] backdrop: dark:!bg-[#23383144] dark:backdrop-blur-[20px] dark:backdrop-saturate-[1.7] mb-8">
               <div className="!p-3">
                 <h3 className="text-1xl dark:text-white font-bold uppercase">
-                  Información del proyecto
+                  {t("projectDetail.infoTitle")}
                 </h3>
               </div>
               <div className="border-b-1 border-[#ffffff4a]"></div>
@@ -61,10 +68,12 @@ const ProjectId = () => {
                     <li className="!pb-[calc(40px/2)]">
                       <div className="flex items-center gap-8">
                         <span className="text-[#306e5f] dark:text-[#b9ffee] text-sm uppercase font-[600] transition-colors">
-                          Categoria:
+                          {t("projectDetail.categoryLabel")}:
                         </span>
                         <span className="text-sm dark:text-white">
-                          {project?.category.name}
+                          {project
+                            ? t(`categories.${project.category.key}`)
+                            : ""}
                         </span>
                       </div>
                     </li>
@@ -72,7 +81,7 @@ const ProjectId = () => {
                     <li className="!pb-[calc(40px/2)] !pt-[calc(40px/2)] ">
                       <div className="flex items-center gap-15">
                         <span className="text-[#306e5f] dark:text-[#b9ffee] text-sm uppercase font-[600] transition-colors">
-                          Cliente:
+                          {t("projectDetail.clientLabel")}:
                         </span>
                         <span className="text-sm flex items-center gap-2 dark:text-white">
                           <div className="flex items-center justify-center size-9 !p-1 bg-[#ffffffc1] dark:bg-[#233831b3] rounded-full company-icon">
@@ -96,19 +105,17 @@ const ProjectId = () => {
                     <li className="!pb-[calc(40px/2)] !pt-[calc(40px/2)]">
                       <div className="flex items-center gap-16">
                         <span className="text-[#306e5f] dark:text-[#b9ffee] text-sm uppercase font-[600] transition-colors">
-                          Fecha:
+                          {t("projectDetail.dateLabel")}:
                         </span>
                         <span className="text-sm dark:text-white">
-                          {dayjs(project?.date).format(
-                            "DD [de] MMMM [de] YYYY",
-                          )}
+                          {dayjs(project?.date).format(t("formats.longDate"))}
                         </span>
                       </div>
                     </li>
                     <li className="!pb-[calc(40px/2)] !pt-[calc(40px/2)]">
                       <div className="flex items-center gap-20">
                         <span className="text-[#306e5f] dark:text-[#b9ffee] text-sm uppercase font-[600] transition-colors">
-                          Rol:
+                          {t("projectDetail.roleLabel")}:
                         </span>
                         <span className="text-sm line-clamp-1 dark:text-white">
                           {project?.role}
@@ -119,7 +126,7 @@ const ProjectId = () => {
                     <li className="!pt-[calc(40px/2)]">
                       <div className="flex items-center gap-20">
                         <span className="text-[#306e5f] dark:text-[#b9ffee] text-sm uppercase font-[600] transition-colors">
-                          Url:
+                          {t("projectDetail.urlLabel")}:
                         </span>
                         <span className="text-sm line-clamp-1 dark:text-white">
                           <a
@@ -141,7 +148,7 @@ const ProjectId = () => {
             <div className="card overflow-hidden p-0 w-full !shadow-none !bg-[#ffffff44] backdrop: dark:!bg-[#23383144] dark:backdrop-blur-[20px] dark:backdrop-saturate-[1.7]">
               <div className="!p-3">
                 <h3 className="text-1xl dark:text-white font-bold uppercase">
-                  Tecnologías Utilizadas
+                  {t("projectDetail.techTitle")}
                 </h3>
               </div>
               <div className="border-b-1 border-[#ffffff90]"></div>
@@ -151,7 +158,7 @@ const ProjectId = () => {
                     <li className="!pb-[calc(40px/2)]">
                       <div className="flex flex-col gap-2">
                         <span className="text-[#306e5f] dark:text-[#b9ffee] text-sm uppercase font-[600] transition-colors">
-                          Frontend:
+                          {t("projectDetail.frontendLabel")}:
                         </span>
                         <div className="flex flex-wrap items-center gap-2">
                           {project?.frontend.map((item) => (
@@ -176,7 +183,7 @@ const ProjectId = () => {
                     <li className="!pb-[calc(40px/2)] !pt-[calc(40px/2)]">
                       <div className="flex flex-col gap-2">
                         <span className="text-[#306e5f] dark:text-[#b9ffee] text-sm uppercase font-[600] transition-colors">
-                          Backend:
+                          {t("projectDetail.backendLabel")}:
                         </span>
                         <div className="flex flex-wrap items-center gap-2">
                           {project?.backend.map((item) => (
@@ -201,7 +208,7 @@ const ProjectId = () => {
                     <li className="!pb-[calc(40px/2)] !pt-[calc(40px/2)]">
                       <div className="flex flex-col gap-2">
                         <span className="text-[#306e5f] dark:text-[#b9ffee] text-sm uppercase font-[600] transition-colors">
-                          Base de datos:
+                          {t("projectDetail.databaseLabel")}:
                         </span>
                         <div className="flex flex-wrap items-center gap-2">
                           {project?.db.map((item) => (
@@ -226,7 +233,7 @@ const ProjectId = () => {
                     <li className="!pt-[calc(40px/2)]">
                       <div className="flex flex-col gap-2">
                         <span className="text-[#306e5f] dark:text-[#b9ffee] text-sm uppercase font-[600] transition-colors">
-                          Infraestructura:
+                          {t("projectDetail.infrastructureLabel")}:
                         </span>
                         <div className="flex flex-wrap items-center gap-2">
                           {project?.infraestructura.map((item) => (
@@ -257,10 +264,18 @@ const ProjectId = () => {
             <div className="card p-0 overflow-hidden !rounded-[3rem] !bg-transparent !shadow-none mb-8">
               <img
                 src={project?.images[0]}
-                alt=""
+                alt={projectTitle}
                 className="w-full object-cover transition-all duration-300 transform scale-[1.02]"
               />
             </div>
+
+            {!isSpanish && project?.acerca_de ? (
+              <div className="mb-6 rounded-3xl border border-[#025a4e20] bg-[#025a4e0a] dark:border-[#b9ffee20] dark:bg-[#b9ffee0a] !px-5 !py-4">
+                <p className="dark:text-white text-sm">
+                  {t("projectDetail.originalContentNotice")}
+                </p>
+              </div>
+            ) : null}
 
             <div
               className="flex flex-col"
@@ -272,9 +287,11 @@ const ProjectId = () => {
               <div className="mt-8">
                 <h2 className="text-2xl uppercase mb-6 font-bold">
                   <span className="font-acorn bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500">
-                    Galería del
+                    {t("projectDetail.galleryPrefix")}
                   </span>{" "}
-                  <span className="font-acorn dark:text-white">Proyecto</span>
+                  <span className="font-acorn dark:text-white">
+                    {t("projectDetail.gallerySuffix")}
+                  </span>
                 </h2>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -286,7 +303,10 @@ const ProjectId = () => {
                     >
                       <img
                         src={imgUrl}
-                        alt={`Captura ${index + 1} de ${project.title}`}
+                        alt={t("projectDetail.screenshotAlt", {
+                          index: index + 1,
+                          title: projectTitle,
+                        })}
                         className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
                       />
@@ -311,7 +331,7 @@ const ProjectId = () => {
                 e.stopPropagation();
                 closeLightbox();
               }}
-              aria-label="Cerrar vista ampliada"
+              aria-label={t("projectDetail.closeExpandedView")}
             >
               <IconX size={18} stroke={2} />
             </button>
@@ -336,7 +356,7 @@ const ProjectId = () => {
               >
                 <img
                   src={selectedImage}
-                  alt="Vista ampliada"
+                  alt={t("projectDetail.expandedViewAlt")}
                   className="w-full h-full !rounded-[2rem] object-contain"
                   draggable={false}
                 />
@@ -345,10 +365,11 @@ const ProjectId = () => {
                   {project?.images?.length}
                 </span>
                 <div className="absolute bottom-5 left-[50%] translate-x-[-50%] flex gap-2">
-                  {project?.images?.map((imgUrl, index) => {
+                  {project?.images?.map((imgUrl) => {
                     const active = selectedImage === imgUrl;
                     return (
                       <button
+                        key={imgUrl}
                         className={`border-1 shadow-lg cursor-pointer border-white w-[10px] h-[10px] rounded-full ${active ? "bg-white" : "bg-transparent"}`}
                         onClick={() => setSelectedImage(imgUrl)}
                       ></button>
@@ -384,11 +405,15 @@ const ProjectId = () => {
                     sm:w-[110px] sm:h-[72px]
                     md:w-[130px] md:h-[86px]
                   `}
-                        aria-label={`Ver imagen ${index + 1}`}
+                        aria-label={t("projectDetail.viewImage", {
+                          index: index + 1,
+                        })}
                       >
                         <img
                           src={imgUrl}
-                          alt={`Miniatura ${index + 1}`}
+                          alt={t("projectDetail.thumbnailAlt", {
+                            index: index + 1,
+                          })}
                           className="w-full h-full object-cover"
                           loading="lazy"
                           draggable={false}
