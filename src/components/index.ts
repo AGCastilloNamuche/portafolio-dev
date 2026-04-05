@@ -9,3 +9,4 @@ export { default as LiveEditor } from "./LiveEditor";
 export { default as UniverseSkills } from "./UniverseSkills";
 export { default as Breadcrumbs } from "./Breadcrumbs";
 export { default as Chatbot } from "./Chatbot";
+export { default as ScrollManager } from "./ScrollManager";

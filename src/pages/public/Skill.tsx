@@ -26,7 +26,7 @@ const Skill = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:place-items-start  lg:grid-cols-4 gap-5">
-        <div className="flex lg:flex-col md:justify-center md:gap-8  lg:gap-5">
+        <div className="flex flex-wrap  justify-center gap-8  lg:gap-5!">
           <div className="flex flex-col">
             <h3 className="text-lg text-[#025a4e] dark:text-[#b9ffee]">
               {t("skill.typeLabel")}
@@ -81,16 +81,18 @@ const Skill = () => {
                 return (
                   <div key={exp.id} className="card !bg-transparent card-flat">
                     <div className="grid grid-cols-5">
-                      <div className="text-sm text-[#025a4e] dark:text-[#defdf5] col-span-1 uppercase mt-3">
+                      <div className="col-span-5 md:col-span-1 text-sm text-[#025a4e] dark:text-[#defdf5] uppercase mt-3">
                         {dayjs(exp.start_date).format(t("formats.monthYear"))} -{" "}
                         <span>
                           {" "}
                           {exp.is_active
                             ? t("skill.present")
-                            : dayjs(exp.end_date).format(t("formats.monthYear"))}{" "}
+                            : dayjs(exp.end_date).format(
+                                t("formats.monthYear"),
+                              )}{" "}
                         </span>
                       </div>
-                      <div className="col-span-4">
+                      <div className="col-span-5 md:col-span-4">
                         <h3 className="text-lg text-[#025a4e] dark:text-[#b9ffee] leading-8">
                           {exp.title} - {exp.company}
                         </h3>

@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router";
+import { NavLink, useLocation, useMatch } from "react-router";
 import type { NavItem } from "../navigation";
 import {
   IconHome2,
@@ -38,6 +38,9 @@ const getIcon = (key: NavItem["key"]) => {
 const BottomNav = ({ navItems, onContactClick }: Props) => {
   const location = useLocation();
   const { t } = useTranslation();
+  const homeMatch = useMatch({ path: "/", end: true }); // solo "/"
+  const skillMatch = useMatch({ path: "/skill", end: false }); // "/skill" (y subrutas si hubiera)
+  const inicioActive = Boolean(homeMatch || skillMatch);
 
   return createPortal(
     <div className="fixed bottom-0 left-0 w-full z-50 md:hidden block">
@@ -45,7 +48,8 @@ const BottomNav = ({ navItems, onContactClick }: Props) => {
         {navItems.map((item) => {
           const isActive =
             location.pathname === item.href ||
-            (location.pathname.startsWith(item.href) && item.href !== "/");
+            (location.pathname.startsWith(item.href) && item.href !== "/") ||
+            (item.href === "/" && inicioActive);
 
           return (
             <NavLink
@@ -60,8 +64,8 @@ const BottomNav = ({ navItems, onContactClick }: Props) => {
               className={[
                 "flex items-center justify-center transition-all duration-300 ease-in-out cursor-pointer",
                 isActive
-                  ? "bg-[#025a4e1c] dark:bg-[#8fdcc21a] text-[#025a4e] dark:!text-[#b9ffee] rounded-[2rem] !px-[18px] !py-[10px]"
-                  : "bg-transparent text-gray-400 dark:!text-[#7d8b85] p-2",
+                  ? "bg-[#025a4e1c] dark:bg-[#8fdcc21a] text-[#025a4e] dark:text-[#b9ffee]! rounded-[2rem] px-[18px]! py-[10px]!"
+                  : "bg-transparent text-gray-400 dark:text-[#fcfcfc]! p-2",
               ].join(" ")}
             >
               <div className="flex items-center gap-1">

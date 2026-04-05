@@ -1,5 +1,11 @@
 import { useEffect, useState, type ReactNode } from "react";
-import { Footer, HorizontalNav, BottomNav, Chatbot } from "../components";
+import {
+  Footer,
+  HorizontalNav,
+  BottomNav,
+  Chatbot,
+  ScrollManager,
+} from "../components";
 import navItems from "../navigation";
 import { useTheme } from "./ThemeContext";
 import { useTranslation } from "react-i18next";
@@ -23,6 +29,8 @@ const AppShell = ({ children }: AppShellProps) => {
 
   return (
     <div className={`container-root-layout theme-${isDark ? "dark" : "light"}`}>
+      <ScrollManager />
+
       <HorizontalNav
         navItems={navItems}
         onContactClick={() => setIsChatOpen(true)}

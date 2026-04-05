@@ -1,7 +1,5 @@
 import { Link } from "react-router";
 import {
-  IconBrandFacebook,
-  IconBrandFigma,
   IconBrandGithub,
   IconBrandLinkedin,
 } from "@tabler/icons-react";
@@ -56,12 +54,20 @@ const Footer = ({ navItems, onContactClick }: Props) => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="https://wa.me/51968725432?text=Hola%20Gian%20Pierre,%20vi%20tu%20portafolio%20y%20me%20gustaría%20conversar%20sobre%20un%20proyecto%20de%20desarrollo.">
+                  <Link
+                    to="https://wa.me/51968725432?text=Hola%20Gian%20Pierre,%20vi%20tu%20portafolio%20y%20me%20gustaría%20conversar%20sobre%20un%20proyecto%20de%20desarrollo."
+                    target="_blank"
+                  >
                     {t("footer.whatsapp")}
                   </Link>
                 </li>
                 <li>
-                  <Link to="#">{t("footer.email")}</Link>
+                  <Link
+                    to={`mailto:${import.meta.env.VITE_EMAIL}`}
+                    target="_blank"
+                  >
+                    {t("footer.email")}
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -69,23 +75,19 @@ const Footer = ({ navItems, onContactClick }: Props) => {
               <h2 className="title-footter">{t("footer.social")}</h2>
               <ul className="flex gap-4  items-center nav-link-social mt-4">
                 <li>
-                  <Link to="#">
-                    <IconBrandFacebook stroke={1.5} />
-                  </Link>
-                </li>
-                <li>
-                  <Link to="#">
+                  <Link
+                    to="https://www.linkedin.com/in/anthony-gian-pierre-castillo-namuche-778837146/"
+                    target="_blank"
+                  >
                     <IconBrandLinkedin stroke={1.5} />
                   </Link>
                 </li>
                 <li>
-                  <Link to="#">
+                  <Link
+                    to="https://github.com/AGCastilloNamuche"
+                    target="_blank"
+                  >
                     <IconBrandGithub stroke={1.5} />
-                  </Link>
-                </li>
-                <li>
-                  <Link to="#">
-                    <IconBrandFigma stroke={1.5} />
                   </Link>
                 </li>
               </ul>
