@@ -1,7 +1,7 @@
 
 import agv from '../../assets/images/AGV.svg??raw'
 import fruitist from '../../assets/images/fruitist.svg??raw'
-import ccd from '../../assets/images/ccd-logo.svg??raw'
+import ckde from '../../assets/images/ckde-1.png'
 import house from '../../assets/images/logo-house.png'
 import microcash from '../../assets/images/microcash.png'
 import clinica from '../../assets/images/clinica-cha.jpg'
@@ -9,7 +9,7 @@ import clinica from '../../assets/images/clinica-cha.jpg'
 export type Company = {
     id: number;
     name: string;
-    isImg : boolean;
+    isImg: boolean;
     img: string;
 }
 
@@ -28,9 +28,9 @@ export const companies: ReadonlyArray<Company> = [
     },
     {
         id: 3,
-        name: "CCD",
-        isImg: false,
-        img: ccd
+        name: "CKDE",
+        isImg: true,
+        img: ckde
     },
     {
         id: 4,
