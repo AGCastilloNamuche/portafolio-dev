@@ -12,6 +12,7 @@ import "dayjs/locale/zh-cn";
 
 // Inicializador de idiomas i18n
 import "./lib/i18n";
+import { ThemeProvider } from "./layouts/ThemeContext";
 
 //configuracion de scroll
 window.addEventListener("scroll", () => {
@@ -26,6 +27,8 @@ window.addEventListener("scroll", () => {
 //configuración de router
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </StrictMode>
 );
